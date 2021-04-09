@@ -1,1 +1,1 @@
-# green-throne-pet
+# Green Throne Pet

@@ -4,7 +4,7 @@
   "description": "A website for a client with a pet waste cleanup business",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp watch"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,14 @@
   "bugs": {
     "url": "https://github.com/TraekWells/green-throne-pet/issues"
   },
-  "homepage": "https://github.com/TraekWells/green-throne-pet#readme"
+  "homepage": "https://github.com/TraekWells/green-throne-pet#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.7.4",
+    "browser-sync": "^2.26.13",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^3.0.0"
+  }
 }
