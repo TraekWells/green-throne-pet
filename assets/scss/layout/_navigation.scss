@@ -1,8 +1,23 @@
 .navigation {
   display: flex;
   justify-content: space-between;
+  @extend %box-shadow;
 
   &__list {
     display: flex;
   }
+
+  &__item {
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+  }
+
+  &__link {
+    padding: 1rem 2rem;
+  }
+}
+
+.logo {
+  width: 20rem;
 }
