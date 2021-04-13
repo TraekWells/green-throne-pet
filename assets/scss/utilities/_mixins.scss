@@ -7,9 +7,18 @@
   justify-content: center;
 }
 
+@mixin hover {
+  transform: translateY(-2px);
+  // @extend %box-shadow;
+}
+
 %box-shadow {
   box-shadow: 0 0.5rem 1.5rem hsla(0, 0%, 0%, 0.08),
     0 2.5rem 3rem hsla(0, 0%, 0%, 0.06);
+}
+
+%transition {
+  transition: 0.2s ease-in all;
 }
 
 %border-radius {

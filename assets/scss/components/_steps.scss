@@ -1,0 +1,27 @@
+@use '../utilities/mixins' as m;
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+
+  .step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 12rem;
+    text-align: center;
+
+    &__icon-wrapper {
+      @include m.center-me;
+      background-color: var(--color-primary-100);
+      border-radius: 50%;
+      height: 5rem;
+      width: 5rem;
+      padding: 4rem;
+
+      img {
+        width: 4rem;
+      }
+    }
+  }
+}

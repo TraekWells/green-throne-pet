@@ -1,4 +1,4 @@
-@use '../utilities/mixins';
+@use '../utilities/mixins' as *;
 
 .button {
   @extend %border-radius;
@@ -6,8 +6,16 @@
   padding: 1.5rem 2.5rem;
   color: var(--color-primary-500);
   border: none;
+  cursor: pointer;
 
   &__primary {
+    @extend %transition;
     background-color: var(--color-primary-100);
+
+    &:hover,
+    &:focus {
+      @include hover;
+      background-color: darken(hsl(134, 44%, 94%), 9%);
+    }
   }
 }
