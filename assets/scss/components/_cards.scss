@@ -1,0 +1,11 @@
+@use '../utilities/mixins' as m;
+
+.cards {
+  display: flex;
+}
+
+.card {
+  @extend %box-shadow;
+  @extend %border-radius;
+  position: relative;
+}

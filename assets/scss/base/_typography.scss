@@ -18,12 +18,13 @@ ul {
 }
 
 h1 {
-  font-size: 6rem;
+  font-size: 5.8rem;
 }
 
 h2 {
   font-size: 3.5rem;
   color: var(--color-primary-500);
+  text-align: center;
 }
 
 h3 {
@@ -40,7 +41,8 @@ h5 {
 
 p,
 a,
-li {
+li,
+button {
   font-size: 1.7rem;
   color: inherit;
   line-height: 1.6;
@@ -48,4 +50,9 @@ li {
 
 a {
   text-decoration: none;
+}
+
+.lead-text {
+  font-size: 1.9rem;
+  text-align: center;
 }

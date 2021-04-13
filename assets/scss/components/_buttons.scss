@@ -3,8 +3,9 @@
 .button {
   @extend %border-radius;
   display: inline-block;
-  padding: 2rem 3rem;
+  padding: 1.5rem 2.5rem;
   color: var(--color-primary-500);
+  border: none;
 
   &__primary {
     background-color: var(--color-primary-100);
