@@ -2,22 +2,46 @@
 
 .steps {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 
   .step {
     display: flex;
     flex-direction: column;
+    align-self: flex-start;
     align-items: center;
     max-width: 12rem;
     text-align: center;
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 10rem;
+    }
+
+    &:nth-child(1) {
+      @include m.dotted-line;
+    }
+
+    &:nth-child(2) {
+      margin-top: 8rem;
+      @include m.dotted-line(flipped);
+    }
+
+    &:nth-child(3) {
+      margin-top: 16rem;
+      @include m.dotted-line;
+    }
+
+    &:nth-child(4) {
+      margin-top: 24rem;
+    }
 
     &__icon-wrapper {
       @include m.center-me;
       background-color: var(--color-primary-100);
       border-radius: 50%;
-      height: 5rem;
-      width: 5rem;
-      padding: 4rem;
+      height: 4.5rem;
+      width: 4.5rem;
+      padding: 3rem;
 
       img {
         width: 4rem;

@@ -12,6 +12,29 @@
   // @extend %box-shadow;
 }
 
+@mixin dotted-line($flipped: false) {
+  &::after {
+    content: "";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    height: 4rem;
+    width: 100%;
+    left: 100%;
+    background-image: url("../images/dotted-line.svg");
+    background-repeat: no-repeat;
+    margin-top: 4rem;
+    margin-left: 0.5rem;
+
+    @if $flipped {
+      transform: rotate(180deg);
+      margin-left: -2rem;
+      margin-top: 6.5rem;
+    }
+  }
+}
+
 %box-shadow {
   box-shadow: 0 0.5rem 1.5rem hsla(0, 0%, 0%, 0.08),
     0 2.5rem 3rem hsla(0, 0%, 0%, 0.06);
