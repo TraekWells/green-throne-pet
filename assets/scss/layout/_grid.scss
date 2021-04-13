@@ -1,13 +1,13 @@
 .container {
   width: 100%;
-  max-width: 140rem;
+  max-width: 100rem;
   margin: 0 auto;
 
   &--wide {
-    max-width: 160rem;
+    max-width: 120rem;
   }
 
   &--narrow {
-    max-width: 120rem;
+    max-width: 80rem;
   }
 }

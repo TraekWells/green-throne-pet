@@ -1,0 +1,12 @@
+@use '../utilities/mixins';
+
+.button {
+  @extend %border-radius;
+  display: inline-block;
+  padding: 2rem 3rem;
+  color: var(--color-primary-500);
+
+  &__primary {
+    background-color: var(--color-primary-100);
+  }
+}
