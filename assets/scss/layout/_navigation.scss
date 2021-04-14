@@ -11,6 +11,7 @@
   }
   &__list {
     display: flex;
+    margin: 1.5rem 0;
   }
 
   &__item {
@@ -21,8 +22,15 @@
   }
 
   &__link {
+    @extend %border-radius;
+    @extend %transition;
     display: block;
-    padding: 3rem 3rem;
+    padding: 1.5rem 2rem;
+    background-color: var(--color-white);
+
+    &:hover {
+      background-color: var(--color-primary-100);
+    }
   }
 }
 

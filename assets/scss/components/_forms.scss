@@ -1,0 +1,40 @@
+@use '../utilities/mixins' as *;
+
+.form {
+  position: relative;
+
+  &-group {
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  label {
+    @extend %transition;
+    animation-fill-mode: forwards;
+    position: absolute;
+    opacity: 0;
+    font-size: 1.4rem;
+    left: 2rem;
+  }
+
+  input {
+    @extend %border-radius;
+    background-color: var(--color-gray-300);
+    border: none;
+    padding: 1rem 2rem;
+    flex-grow: 1;
+    margin-right: 1.5rem;
+
+    &:focus {
+      @extend %border-radius;
+      outline: 2px solid var(--color-primary-400);
+    }
+
+    &:focus + label {
+      opacity: 1;
+      transform: translateY(-2.5rem);
+    }
+  }
+}

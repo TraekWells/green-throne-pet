@@ -5,6 +5,13 @@
   background-color: lightgray;
   min-height: 40rem;
   @include m.center-me;
+  color: var(--color-white);
+
+  &--home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
+      url(../images/homepage-hero.jpg);
+    background-size: cover;
+  }
 
   .container {
     @include m.center-me(column);

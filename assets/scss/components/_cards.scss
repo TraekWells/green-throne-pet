@@ -5,10 +5,7 @@
 }
 
 .card {
-  @extend %box-shadow;
-  @extend %border-radius;
-  position: relative;
-  padding: 4.5rem 3rem 3rem;
+  @extend %card-styles;
 
   &:not(:last-child) {
     margin-right: 4rem;

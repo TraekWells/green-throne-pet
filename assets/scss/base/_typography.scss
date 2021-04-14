@@ -1,4 +1,5 @@
 @use '../utilities/variables' as *;
+@use '../utilities/mixins' as *;
 
 body {
   font-family: var(--font-body);
@@ -15,6 +16,10 @@ h6 {
 
 ul {
   list-style: none;
+}
+
+li:not(.navigation__item) {
+  margin-bottom: 1.5rem;
 }
 
 h1 {
@@ -43,7 +48,9 @@ h5 {
 p,
 a,
 li,
-button {
+button,
+label,
+input {
   font-size: 1.7rem;
   color: #333333;
   line-height: 1.6;
@@ -53,7 +60,29 @@ a {
   text-decoration: none;
 }
 
+.subtitle {
+  color: inherit;
+  font-size: 1.8rem;
+}
+
 .lead-text {
   font-size: 1.9rem;
   text-align: center;
+}
+
+.checked-list {
+  margin-bottom: 3rem;
+
+  li {
+    display: flex;
+    align-items: center;
+  }
+  svg {
+    width: 2rem;
+    margin-right: 1rem;
+  }
+  svg > g {
+    stroke: var(--color-primary-500);
+    stroke-width: 1.3;
+  }
 }

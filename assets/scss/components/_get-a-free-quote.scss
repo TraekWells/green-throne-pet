@@ -1,0 +1,18 @@
+@use '../utilities/mixins' as *;
+@use '../utilities/variables' as *;
+
+.get-a-quote {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__content {
+    flex-basis: 50%;
+  }
+
+  &__image {
+    @extend %border-radius;
+    flex-basis: 30%;
+    margin-right: 4rem;
+  }
+}

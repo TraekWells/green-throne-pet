@@ -10,7 +10,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/styles.css" />
-    <title>Green Throne Pet</title>
+    <title>Green Throne</title>
   </head>
   <body>
     <nav class="navigation">
@@ -48,18 +48,18 @@
       <header class="hero hero--home">
         <div class="container container--narrow">
           <h1>Sick of dealing with dog crap?</h1>
-          <p>
-            Well, you’re in luck! Here at Green Throne Pet, we pick up the dog
+          <p class="subtitle">
+            Well, you’re in luck! Here at Green Throne, we pick up the dog
             poop, so you don’t have too. Give us a call or check us out online
             to see if we are going to be a fit for you and your furry family
             member.
           </p>
-          <form>
+          <form class="form">
             <div class="form-group">
-              <label for="zip-code">Enter your Zip Code</label>
+              <label for="zip-code-hero">Enter your Zip Code</label>
               <input
                 type="text"
-                id="zip-code"
+                id="zip-code-hero"
                 placeholder="Enter your Zip Code"
               />
               <button class="button button__primary">Get a Free Quote</button>
@@ -221,7 +221,7 @@
       </section>
       <section>
         <div class="container">
-        <h2>Why Choose Green Throne Pet?</h2>
+        <h2>Why Choose Green Throne?</h2>
         <p class="lead-text">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim
           suscipit fugiat inventore eos sed debitis.
@@ -233,49 +233,51 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
               commodi velit esse quo dolorum incidunt.
             </p>
-            <ul>
-              <li>No contracts, no hidden fees and cancel anytime!</li>
-              <li>Free belly rubs and water bowl refills</li>
-              <li>Anything else?</li>
+            <ul class="checked-list">
+              <li><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g stroke-linecap="round" stroke-width="1.5" stroke="#323232" fill="none" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 1 0 0-18Z"/><path d="M8.44 12.339l2.167 2.167 -.02-.02 4.88-4.89"/></g><path fill="none" d="M0 0h24v24H0Z"/></svg>No contracts, no hidden fees and cancel anytime!</li>
+              <li><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g stroke-linecap="round" stroke-width="1.5" stroke="#323232" fill="none" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 1 0 0-18Z"/><path d="M8.44 12.339l2.167 2.167 -.02-.02 4.88-4.89"/></g><path fill="none" d="M0 0h24v24H0Z"/></svg>Free belly rubs and water bowl refills</li>
+              <li><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g stroke-linecap="round" stroke-width="1.5" stroke="#323232" fill="none" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 0 18 9 9 0 1 0 0-18Z"/><path d="M8.44 12.339l2.167 2.167 -.02-.02 4.88-4.89"/></g><path fill="none" d="M0 0h24v24H0Z"/></svg>Anything else?</li>
             </ul>
             <a href="#" class="button button__primary">Get a Free Quote</a>
           </article>
-          <article class="overlapping-cards__image"></article>
+          <article class="overlapping-cards__image">
+            <img src="https://picsum.photos/id/237/200/300" alt="">
+          </article>
         </section>
       </section>
       <section>
         <div class="container">
-        <div class="quote-block">
-          <img src="" alt="" class="quote-block__image" />
-          <div class="quote-block__content">
-            <h3>Get a Free Quote</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
-              assumenda minus provident ratione rem officiis!
-            </p>
-            <form>
-              <div class="form-group">
-                <label for="zip-code">Enter your Zip Code</label>
-                <input
+          <div class="get-a-quote">
+            <img src="https://picsum.photos/id/237/200/300" alt="" class="get-a-quote__image" />
+            <div class="get-a-quote__content">
+              <h3>Get a Free Quote</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
+                assumenda minus provident ratione rem officiis!
+              </p>
+              <form class="form">
+                <div class="form-group form-group--inline">
+                  <input
                   type="text"
-                  id="zip-code"
+                  id="zip-code-widget"
                   placeholder="Enter your Zip Code"
-                />
-                <button class="button button__primary">Get a Free Quote</button>
-              </div>
-            </form>
+                  />
+                  <label for="zip-code-widget">Enter your Zip Code</label>
+                  <button class="button button__primary">Get a Free Quote</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
-      </div>
       </section>
     </main>
     <footer class="footer">
       <div class="footer__pages">
-        <a href="#">Service Area</a>
-        <a href="#">Pricing</a>
-        <a href="#">Contact</a>
-        <a href="#">FAQ</a>
-        <a href="#">About</a>
+        <a href="#" class="footer__link">Service Area</a>
+        <a href="#" class="footer__link">Pricing</a>
+        <a href="#" class="footer__link">Contact</a>
+        <a href="#" class="footer__link">FAQ</a>
+        <a href="#" class="footer__link">About</a>
       </div>
       <div class="footer__socials"></div>
       <p>© 2021 Green Throne Pet. All rights reserved.</p>
