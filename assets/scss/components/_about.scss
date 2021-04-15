@@ -1,0 +1,41 @@
+@use '../abstracts/mixins' as *;
+
+.about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__image {
+    max-width: 30rem;
+    border-radius: 50%;
+    margin-bottom: 3rem;
+  }
+
+  &__socials {
+    display: flex;
+  }
+
+  &__social-icon {
+    @include center-me;
+    @extend %transition;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    padding: 1rem;
+    overflow: hidden;
+
+    &:not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    &:hover {
+      @include hover;
+      @extend %box-shadow;
+    }
+
+    svg {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+}
