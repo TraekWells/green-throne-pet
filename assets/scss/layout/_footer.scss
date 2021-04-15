@@ -1,4 +1,5 @@
 @use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .footer {
   display: flex;
@@ -13,11 +14,40 @@
   &__pages {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 3rem;
   }
 
   &__link {
     &:not(:last-child) {
+      margin-right: 5rem;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    margin-bottom: 3rem;
+  }
+
+  &__social-icon {
+    @include center-me;
+    @extend %transition;
+    background-color: var(--color-white);
+    border-radius: 50%;
+    padding: 1rem;
+    overflow: hidden;
+
+    &:not(:last-child) {
       margin-right: 3rem;
+    }
+
+    &:hover {
+      @include hover;
+      @extend %box-shadow;
+    }
+
+    svg {
+      width: 3rem;
+      height: 3rem;
     }
   }
 }
