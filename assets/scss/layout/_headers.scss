@@ -1,19 +1,23 @@
-@use '../abstracts/mixins' as m;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 .hero {
+  @include center-me;
+  background-color: var(--color-primary-100);
   text-align: center;
-  background-color: lightgray;
-  min-height: 40rem;
-  @include m.center-me;
-  color: var(--color-white);
+  min-height: 25rem;
+  color: var(--color-gray-700);
 
   &--home {
+    color: var(--color-white);
     background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)),
       url(../images/homepage-hero.jpg);
     background-size: cover;
+    background-position: center;
+    min-height: 40rem;
   }
 
   .container {
-    @include m.center-me(column);
+    @include center-me(column);
   }
 }
