@@ -2,9 +2,9 @@
 <svg width="1440px" height="2971px" viewBox="0 0 1440 2971" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <title>Backgrounds Bubbles</title>
     <g id="background-bubbles" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <circle id="Oval" fill="#FDF7F2" cx="1257.5" cy="256.5" r="256.5"></circle>
-        <circle id="Oval-Copy-6" fill="#FDF7F2" cx="1112.5" cy="2633.5" r="256.5"></circle>
-        <circle id="Oval-Copy-5" fill="#FDF7F2" cx="343.5" cy="920.5" r="81.5"></circle>
-        <circle id="Oval-Copy-4" fill="#F4FBF6" cx="287" cy="2071" r="333"></circle>
+        <circle id="top-orange-circle" fill="#FDF7F2" cx="1100" cy="300" r="256.5"></circle>
+        <circle id="Oval-Copy-6" fill="#FDF7F2" cx="1000" cy="2633.5" r="256.5"></circle>
+        <circle id="small-orange-circle" fill="#FDF7F2" cx="150" cy="920.5" r="81.5"></circle>
+        <circle id="Oval-Copy-4" fill="#F4FBF6" cx="250" cy="2071" r="200"></circle>
     </g>
 </svg>
