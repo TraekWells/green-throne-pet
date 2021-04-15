@@ -1,5 +1,5 @@
-@use '../utilities/variables' as *;
-@use '../utilities/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
 
 body {
   font-family: var(--font-body);

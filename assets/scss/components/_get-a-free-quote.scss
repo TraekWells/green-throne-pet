@@ -1,5 +1,5 @@
-@use '../utilities/mixins' as *;
-@use '../utilities/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
 
 .get-a-quote {
   display: flex;
