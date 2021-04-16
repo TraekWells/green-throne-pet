@@ -1,7 +1,11 @@
-@use '../abstracts/mixins' as m;
+@use '../abstracts/mixins' as *;
 
 .cards {
   display: flex;
+
+  @include media-query(phone) {
+    flex-direction: column;
+  }
 }
 
 .card {
@@ -16,7 +20,7 @@
   }
 
   .icon-wrapper {
-    @include m.center-me;
+    @include center-me;
     background-color: var(--color-primary-100);
     border-radius: 50%;
     position: absolute;
