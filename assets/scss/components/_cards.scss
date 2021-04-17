@@ -3,16 +3,31 @@
 .cards {
   display: flex;
 
-  @include media-query(phone) {
+  @include media-query(phone-large) {
     flex-direction: column;
+    align-items: center;
   }
 }
 
 .card {
   @extend %card-styles;
 
+  @include media-query(phone-large) {
+    max-width: 45rem;
+  }
+
   &:not(:last-child) {
     margin-right: 4rem;
+
+    @include media-query(phone-large) {
+      margin-right: 0;
+    }
+  }
+
+  &:first-child {
+    @include media-query(phone-large) {
+      margin-bottom: 6rem;
+    }
   }
 
   h3 {

@@ -16,10 +16,18 @@
 
 .cols {
   display: flex;
+
+  @include media-query(phone-large) {
+    flex-direction: column;
+  }
+
+  > * {
+    width: 100%;
+  }
 }
 
 .col {
-  flex-basis: 50%;
+  // flex-basis: 50%;
 
   &:not(:last-child) {
     margin-right: 5rem;

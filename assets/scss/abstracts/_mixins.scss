@@ -30,29 +30,51 @@
     margin-top: 4rem;
     margin-left: 0.5rem;
 
+    @include media-query(phone-large) {
+      // width: 40%;
+      display: none;
+    }
+
     @if $flipped {
       transform: rotate(180deg);
       margin-left: -2rem;
       margin-top: 6.5rem;
+
+      @include media-query(phone-large) {
+        margin-top: 2rem;
+        margin-left: 0;
+      }
     }
   }
 }
 
 /*
-  phone:      500px
-  tablet:     950px
-  desktop:    1050px
+  phone:           500px
+  phone-large:     700px
+  tablet-port:     850px
+  tablet-land:     900px
+  desktop:         1050px
 */
 
 @mixin media-query($breakpoint) {
   @if $breakpoint == phone {
     // Figure out why ems aren't working
-    @media only screen and (max-width: 500px) {
+    @media only screen and (max-width: 31.25em) {
       @content;
     }
   }
-  @if $breakpoint == tablet {
-    @media only screen and (max-width: 59.375em) {
+  @if $breakpoint == phone-large {
+    @media only screen and (max-width: 43.75em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet-port {
+    @media only screen and (max-width: 53.125em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet-land {
+    @media only screen and (max-width: 56.25em) {
       @content;
     }
   }

@@ -1,8 +1,12 @@
-@use '../abstracts/mixins' as m;
+@use '../abstracts/mixins' as *;
 
 .steps {
   display: flex;
   justify-content: center;
+
+  @include media-query(phone-large) {
+    flex-wrap: wrap;
+  }
 
   .step {
     display: flex;
@@ -15,28 +19,44 @@
 
     &:not(:last-child) {
       margin-right: 10rem;
+
+      @include media-query(tablet-port) {
+        margin-right: 6rem;
+      }
     }
 
     &:nth-child(1) {
-      @include m.dotted-line;
+      @include dotted-line;
     }
 
     &:nth-child(2) {
       margin-top: 8rem;
-      @include m.dotted-line(flipped);
+      @include dotted-line(flipped);
+
+      @include media-query(phone-large) {
+        margin-top: 0;
+      }
     }
 
     &:nth-child(3) {
       margin-top: 16rem;
-      @include m.dotted-line;
+      @include dotted-line;
+
+      @include media-query(phone-large) {
+        margin-top: 0;
+      }
     }
 
     &:nth-child(4) {
       margin-top: 24rem;
+
+      @include media-query(phone-large) {
+        margin-top: 0;
+      }
     }
 
     &__icon-wrapper {
-      @include m.center-me;
+      @include center-me;
       background-color: var(--color-primary-100);
       border-radius: 50%;
       height: 4.5rem;

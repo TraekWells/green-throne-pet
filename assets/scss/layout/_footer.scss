@@ -15,6 +15,12 @@
     display: flex;
     justify-content: space-around;
     margin-bottom: 3rem;
+
+    @include media-query(phone) {
+      flex-wrap: wrap;
+      justify-content: unset;
+      width: 90%;
+    }
   }
 
   &__link {

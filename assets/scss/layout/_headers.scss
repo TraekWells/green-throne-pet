@@ -15,6 +15,10 @@
     background-size: cover;
     background-position: center;
     min-height: 40rem;
+
+    @include media-query(phone) {
+      height: 65vh;
+    }
   }
 
   .container {
