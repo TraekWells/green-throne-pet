@@ -4,6 +4,10 @@
   background-color: var(--color-white);
   @extend %box-shadow;
 
+  @include media-query(phone-large) {
+    padding: 1rem 0;
+  }
+
   .container--wide {
     display: flex;
     justify-content: space-between;
@@ -13,7 +17,13 @@
     display: flex;
     margin: 1.5rem 0;
 
-    @include media-query(phone) {
+    @include media-query(phone-large) {
+      display: none;
+    }
+  }
+
+  &__cta {
+    @include media-query(phone-large) {
       display: none;
     }
   }

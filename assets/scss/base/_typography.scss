@@ -37,7 +37,7 @@ h1 {
   color: inherit;
 
   @include media-query(phone-large) {
-    font-size: 5rem;
+    font-size: 4rem;
   }
 }
 
@@ -47,7 +47,7 @@ h2 {
   text-align: center;
 
   @include media-query(phone-large) {
-    font-size: 3.1rem;
+    font-size: 3rem;
   }
 }
 
@@ -56,7 +56,7 @@ h3 {
   color: var(--color-primary-500);
 
   @include media-query(phone-large) {
-    font-size: 2.7rem;
+    font-size: 2.6rem;
   }
 }
 
@@ -110,7 +110,7 @@ a {
 
   li {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
   }
   svg {
     width: 2rem;

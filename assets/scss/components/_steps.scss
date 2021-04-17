@@ -4,8 +4,9 @@
   display: flex;
   justify-content: center;
 
-  @include media-query(phone-large) {
-    flex-wrap: wrap;
+  @include media-query(phone) {
+    flex-direction: column;
+    align-items: center;
   }
 
   .step {
@@ -17,11 +18,20 @@
     text-align: center;
     position: relative;
 
+    @include media-query(phone-large) {
+      max-width: none;
+      width: 100%;
+      margin-bottom: 4rem;
+    }
+
     &:not(:last-child) {
       margin-right: 10rem;
 
       @include media-query(tablet-port) {
         margin-right: 6rem;
+      }
+      @include media-query(phone-large) {
+        margin-right: 0;
       }
     }
 
