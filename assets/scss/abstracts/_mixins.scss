@@ -64,6 +64,7 @@
 /*
   phone:           500px
   phone-large:     600px
+  tablet-small:    750px
   tablet-port:     850px
   tablet-land:     900px
   desktop:         1050px
@@ -78,6 +79,11 @@
   }
   @if $breakpoint == phone-large {
     @media only screen and (max-width: 37.5em) {
+      @content;
+    }
+  }
+  @if $breakpoint == tablet-small {
+    @media only screen and (max-width: 46.875em) {
       @content;
     }
   }

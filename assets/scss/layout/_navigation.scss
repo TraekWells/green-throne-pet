@@ -4,7 +4,7 @@
   background-color: var(--color-white);
   @extend %box-shadow;
 
-  @include media-query(phone-large) {
+  @include media-query(tablet-small) {
     padding: 1rem 0;
   }
 
@@ -13,17 +13,12 @@
     justify-content: space-between;
     align-items: center;
   }
+
   &__list {
     display: flex;
     margin: 1.5rem 0;
 
-    @include media-query(phone-large) {
-      display: none;
-    }
-  }
-
-  &__cta {
-    @include media-query(phone-large) {
+    @include media-query(tablet-small) {
       display: none;
     }
   }
