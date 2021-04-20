@@ -4,7 +4,8 @@ const gulp = require("gulp"),
   autoprefixer = require("autoprefixer"),
   cssnano = require("cssnano"),
   browserSync = require("browser-sync").create(),
-  sourcemaps = require("gulp-sourcemaps");
+  sourcemaps = require("gulp-sourcemaps"),
+  url = "http://green-throne.local";
 
 function scss() {
   return gulp
@@ -19,14 +20,14 @@ function scss() {
 
 function watch() {
   browserSync.init({
-    server: {
-      baseDir: "./",
-      notify: false,
-    },
+    proxy: url,
+    notify: false,
+    ghostMode: false,
   });
   gulp.watch("./assets/scss/**/*.scss", scss);
+  gulp.watch("./*.php").on("change", browserSync.reload);
+  gulp.watch("./template-parts/*.php").on("change", browserSync.reload);
   gulp.watch("./assets/js/**.js").on("change", browserSync.reload);
-  gulp.watch("./**.html").on("change", browserSync.reload);
 }
 
 exports.scss = scss;
