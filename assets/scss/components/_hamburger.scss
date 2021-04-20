@@ -1,5 +1,16 @@
 @use '../abstracts/mixins' as *;
 
+.overlay {
+  display: none;
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 150%;
+  width: 150%;
+  background-color: var(--color-white);
+  z-index: 15;
+}
+
 .hamburger {
   padding: 15px 15px;
   display: none;
@@ -62,6 +73,7 @@
   transition-property: transform;
   transition-duration: 0.15s;
   transition-timing-function: ease;
+  pointer-events: none;
 }
 .hamburger-inner::before,
 .hamburger-inner::after {

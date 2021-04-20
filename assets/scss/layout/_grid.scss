@@ -5,6 +5,10 @@
   max-width: 100rem;
   margin: 0 auto;
 
+  @include media-query(tablet-small) {
+    width: 90%;
+  }
+
   &--wide {
     max-width: 120rem;
   }

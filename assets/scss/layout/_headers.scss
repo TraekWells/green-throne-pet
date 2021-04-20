@@ -14,7 +14,7 @@
       url(../images/homepage-hero.jpg);
     background-size: cover;
     background-position: center;
-    min-height: 40rem;
+    min-height: 50rem;
 
     @include media-query(phone) {
       // height: 65vh;
