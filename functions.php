@@ -2,8 +2,14 @@
 
 function green_throne_files() {
   wp_enqueue_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"', NULL, '1.0', true );
-  wp_enqueue_script('green_throne_main_scripts', get_template_directory_uri() . '/assets/js/main.js', NULL, '1.0', true);
-  wp_enqueue_style('main_styles', get_template_directory_uri() . '/assets/css/styles.css', array(), filemtime(get_template_directory() . '/assets/css/styles.css'), false);
+  wp_enqueue_style('main_styles', get_template_directory_uri() . '/css/styles.css');
+  if (strstr($_SERVER['SERVER_NAME'], "green-throne.local")) {
+    wp_enqueue_script('green_throne_main_scripts', 'http://localhost:3000/bundled.js', NULL, '1.0', true);
+  } else {
+    wp_enqueue_script('green_throne_vendors', get_theme_file_uri('/bundled-assets/vendors.js'), NULL, '1.0', true);
+    wp_enqueue_script('green_throne_main_scripts', get_theme_file_uri('/bundled-assets/scripts.a0704d046ea5758f3305.js'), NULL, '1.0', true);
+    wp_enqueue_style('green_throne_main_styles', get_theme_file_uri('/bundled-assets/styles.a0704d046ea5758f3305.css'));
+  }
 };
 
 add_action( 'wp_enqueue_scripts', 'green_throne_files' );
