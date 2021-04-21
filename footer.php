@@ -1,10 +1,10 @@
     <footer class="footer">
       <div class="footer__pages">
-        <a href="#" class="footer__link">Service Area</a>
-        <a href="#" class="footer__link">Pricing</a>
-        <a href="#" class="footer__link">Contact</a>
-        <a href="#" class="footer__link">FAQ</a>
-        <a href="#" class="footer__link">About</a>
+        <a href="<?php echo site_url( '/service-area' ); ?>" class="footer__link">Service Area</a>
+        <a href="<?php echo site_url( '/pricing' ); ?>" class="footer__link">Pricing</a>
+        <a href="<?php echo site_url( '/contact' ); ?>" class="footer__link">Contact</a>
+        <a href="<?php echo site_url( '/faq' ); ?>" class="footer__link">FAQ</a>
+        <a href="<?php echo site_url( '/about' ); ?>" class="footer__link">About</a>
       </div>
       <div class="footer__socials">
         <a href="#" class="footer__social-icon">
@@ -22,6 +22,10 @@
       </div>
       <p class="text-center">© <?php echo date('Y'); ?> Green Throne Pet. All rights reserved.</p>
     </footer>
+    <script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.17.5'><\/script>".replace("HOST", location.hostname));
+    //]]>
+    </script>
     <?php wp_footer(); ?>
   </body>
 </html>

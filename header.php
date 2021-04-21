@@ -9,29 +9,29 @@
   <body>
     <nav class="navigation">
       <div class="container container--wide">
-        <a href="#">
+        <a href="<?php echo site_url(); ?>">
           <img
             class="logo"
-            src="<?php echo get_template_directory_uri(); ?>/images/green-throne-pet-logo.png"
+            src="<?php echo get_template_directory_uri(); ?>/assets/images/green-throne-pet-logo.png"
             alt="Green Throne Pet Logo"
           />
         </a>
         <ul class="navigation__list">
           <li class="navigation__item">
-            <a href="#" class="navigation__link">Service Area</a>
+            <a href="<?php echo site_url( '/service-area' ); ?>" class="navigation__link">Service Area</a>
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link">Pricing</a>
+            <a href="<?php echo site_url( '/pricing' ); ?>" class="navigation__link">Pricing</a>
           </li>
           <li class="navigation__item">
-            <a href="contact.html" class="navigation__link">Contact</a>
+            <a href="<?php echo site_url( '/contact' ); ?>" class="navigation__link">Contact</a>
           </li>
           <li class="navigation__item">
-            <a href="#" class="navigation__link">FAQ</a>
+            <a href="<?php echo site_url( '/faq' ); ?>" class="navigation__link">FAQ</a>
           </li>
         </ul>
         <div class="navigation__cta">
-          <a href="#" class="button button__primary">Get a Free Quote</a>
+          <a href="<?php echo site_url( '/service-area' ); ?>" class="button button__primary">Get a Free Quote</a>
         </div>
         <button class="hamburger hamburger--slider" type="button">
           <span class="hamburger-box">

@@ -1,52 +1,28 @@
 {
-  "name": "green-throne",
+  "name": "green-throne-pet",
   "version": "1.0.0",
-  "description": "",
+  "description": "A website for a client with a pet waste cleanup business",
   "main": "index.js",
   "scripts": {
-    "dev": "npm-run-all -p start buildWatch",
-    "start": "webpack-dev-server",
-    "buildWatch": "webpack --watch",
-    "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "gulp watch"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TraekWells/green-throne-pet.git"
+  },
+  "author": "Traek Wells",
   "license": "ISC",
-  "dependencies": {
-    "@babel/core": "^7.11.6",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
-    "@glidejs/glide": "^3.4.1",
-    "autoprefixer": "^9.8.2",
-    "babel-loader": "^8.1.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "css-loader": "^4.3.0",
-    "cssnano": "^4.1.10",
-    "file-loader": "^6.2.0",
-    "fs-extra": "^9.0.1",
-    "jquery": "^3.5.1",
-    "mini-css-extract-plugin": "^0.11.2",
-    "normalize.css": "^8.0.1",
-    "npm-run-all": "^4.1.5",
-    "postcss-color-function": "^4.1.0",
-    "postcss-hexrgba": "^2.0.1",
-    "postcss-import": "^12.0.1",
-    "postcss-loader": "^3.0.0",
-    "postcss-mixins": "^6.2.3",
-    "postcss-nested": "^4.2.1",
-    "postcss-simple-vars": "^5.0.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "style-loader": "^1.2.1",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-manifest-plugin": "^2.2.0"
+  "bugs": {
+    "url": "https://github.com/TraekWells/green-throne-pet/issues"
   },
+  "homepage": "https://github.com/TraekWells/green-throne-pet#readme",
   "devDependencies": {
-    "resolve-url-loader": "^3.1.2",
-    "sass": "^1.32.11",
-    "sass-loader": "^10.1.1"
+    "autoprefixer": "^9.7.4",
+    "browser-sync": "^2.26.13",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-dart-sass": "^1.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sourcemaps": "^3.0.0"
   }
 }
