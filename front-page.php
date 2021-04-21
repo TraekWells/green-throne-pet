@@ -10,7 +10,7 @@
             to see if we are going to be a fit for you and your furry family
             member.
           </p>
-          <form class="form">
+          <form class="form" action="<?php echo site_url( '/get-a-free-quote' ); ?>" method="post">
             <div class="form-group form-group--inline">
               <label for="zip-code-hero">Enter your Zip Code</label>
               <input
