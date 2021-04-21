@@ -145,7 +145,7 @@
           <article class="step">
             <div class="step__icon-wrapper">
               <img
-                src="/assets/images/invoice-accounting-document.svg"
+                src="<?php echo get_template_directory_uri(); ?>/images/invoice-accounting-document.svg"
                 alt="Step One"
               />
             </div>
@@ -153,14 +153,14 @@
           </article>
           <article class="step">
             <div class="step__icon-wrapper">
-              <img src="/assets/images/calendar-checkmark.svg" alt="Step Two" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/calendar-checkmark.svg" alt="Step Two" />
             </div>
             <p>Schedule your cleanup service</p>
           </article>
           <article class="step">
             <div class="step__icon-wrapper">
               <img
-                src="/assets/images/wash-floor-brush-broom.svg"
+                src="<?php echo get_template_directory_uri(); ?>/images/wash-floor-brush-broom.svg"
                 alt="Step Three"
               />
             </div>
@@ -168,7 +168,7 @@
           </article>
           <article class="step">
             <div class="step__icon-wrapper">
-              <img src="/assets/images/smiley.svg" alt="Step Four" />
+              <img src="<?php echo get_template_directory_uri(); ?>/images/smiley.svg" alt="Step Four" />
             </div>
             <p>Enjoy your new, poop-free yard!</p>
           </article>

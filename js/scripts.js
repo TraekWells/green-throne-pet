@@ -1,5 +1,5 @@
-import "../css/styles.css";
+import "../scss/styles.scss";
 
-import MobileNav from "./modules/MobileNav";
+// import MobileNav from "./modules/MobileNav";
 
-MobileNav();
+// MobileNav();

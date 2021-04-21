@@ -22,10 +22,6 @@
       </div>
       <p class="text-center">© <?php echo date('Y'); ?> Green Throne Pet. All rights reserved.</p>
     </footer>
-    <script id="__bs_script__">//<![CDATA[
-    document.write("<script async src='/browser-sync/browser-sync-client.js?v=2.17.5'><\/script>".replace("HOST", location.hostname));
-    //]]>
-    </script>
     <?php wp_footer(); ?>
   </body>
 </html>

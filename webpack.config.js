@@ -16,7 +16,6 @@ const ManifestPlugin = require("webpack-manifest-plugin");
 const fse = require("fs-extra");
 
 const postCSSPlugins = [
-  require("postcss-import"),
   require("postcss-mixins"),
   require("postcss-simple-vars"),
   require("postcss-nested"),
@@ -57,10 +56,11 @@ class RunAfterCompile {
 }
 
 let cssConfig = {
-  test: /\.css$/i,
+  test: /\.scss$/i,
   use: [
     "css-loader?url=false",
     { loader: "postcss-loader", options: { plugins: postCSSPlugins } },
+    "sass-loader",
   ],
 };
 
@@ -72,6 +72,21 @@ let config = {
   module: {
     rules: [
       cssConfig,
+      {
+        test: /\.(svg|jpg|png|gif)$/,
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              publicPath: path.resolve(__dirname, "./images"),
+              // outputPath: "images",
+              name: "[name].[ext]",
+              esModule: false,
+              useRelativePaths: true,
+            },
+          },
+        ],
+      },
       {
         test: /\.js$/,
         exclude: /(node_modules)/,
