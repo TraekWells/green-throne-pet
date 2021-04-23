@@ -10,7 +10,7 @@
   </header>
   <section>
     <div class="container container--narrow">
-      <div class="cols">
+      <div class="two-column-grid">
         <div class="col">
           <p class="mb-4">
             Ratione occaecati placeat qui commodi. Non blanditiis voluptate

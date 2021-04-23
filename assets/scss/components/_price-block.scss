@@ -1,0 +1,39 @@
+@use '../abstracts/mixins' as *;
+
+.price-blocks {
+  display: flex;
+}
+
+.price-block {
+  background-color: var(--color-primary-100);
+  padding: 2.5rem;
+  @extend %border-radius;
+  text-align: center;
+  flex: 1 1 0px;
+  display: flex;
+  flex-direction: column;
+
+  &:not(:last-child) {
+    margin-right: 3rem;
+  }
+
+  &__title {
+    font-weight: normal;
+    margin-bottom: 1rem;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    margin-bottom: 0;
+  }
+
+  &.disabled {
+    background-color: var(--color-gray-300);
+
+    .price-block__title,
+    .price-block__price,
+    .price-block__text {
+      color: var(--color-gray-500);
+    }
+  }
+}

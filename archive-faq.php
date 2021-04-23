@@ -9,29 +9,25 @@ get_header(); ?>
       </header>
       <section>
         <div class="container container--narrow">
-          <div class="cols">
-            <div class="col">
-              <div class="faqs">
-                <?php
-                  $faqQuery = new WP_Query(array(
-                    'post_type' => 'faq',
-                    'posts_per_page' => -1
-                  ));
-                  if ( $faqQuery->have_posts() ) : 
-                    while ( $faqQuery->have_posts() ) : $faqQuery->the_post();
-                    ?>
-                    <div class="faq">
-                      <h2 class="text-left"><?php the_title(); ?></h2>
-                      <p><?php the_content(); ?></p>
-                    </div>
-
-                    <?php
-                    endwhile;
-                  endif;
-                  wp_reset_postdata();
+          <div class="faqs">
+            <?php
+              $faqQuery = new WP_Query(array(
+                'post_type' => 'faq',
+                'posts_per_page' => -1
+              ));
+              if ( $faqQuery->have_posts() ) : 
+                while ( $faqQuery->have_posts() ) : $faqQuery->the_post();
                 ?>
-              </div>
-            </div>
+                <div class="faq">
+                  <h2 class="text-left"><?php the_title(); ?></h2>
+                  <p><?php the_content(); ?></p>
+                </div>
+
+                <?php
+                endwhile;
+              endif;
+              wp_reset_postdata();
+            ?>
           </div>
         </div>
       </section>

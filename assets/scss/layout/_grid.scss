@@ -18,24 +18,15 @@
   }
 }
 
-.cols {
-  display: flex;
-
-  @include media-query(phone-large) {
-    flex-direction: column;
-  }
-
-  > * {
-    width: 100%;
-  }
+.one-column-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.col {
-  // flex-basis: 50%;
-
-  &:not(:last-child) {
-    margin-right: 5rem;
-  }
+.two-column-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 5rem;
 }
 
 section {
