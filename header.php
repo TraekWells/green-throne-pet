@@ -31,7 +31,7 @@
           </li>
         </ul>
         <div class="navigation__cta">
-          <a href="<?php echo site_url( '/service-area' ); ?>" class="button button__primary">Get a Free Quote</a>
+          <a href="<?php echo site_url( '/get-a-free-quote' ); ?>" class="button button__primary">Get a Free Quote</a>
         </div>
         <button class="hamburger hamburger--slider" type="button">
           <span class="hamburger-box">
