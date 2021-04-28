@@ -1,8 +1,15 @@
-<?php get_header(); ?>
+<?php get_header();
+  $zipCode = $_POST["zip-code"];
+?>
     <main>
       <header class="hero">
         <div class="container container--narrow">
-        <h1>Get a Free Quote</h1>
+          <?php if (!empty($_POST)) { ?>
+            <h1>Sweet, I can work in <?php echo $zipCode; ?></h1>
+            <?php
+          } else { ?>
+            <h1>Get a Free Quote</h1>
+          <?php } ?>
         <p class="subtitle">I just need a little bit more information about your yard... and then what?</p>
         </div>
       </header>
@@ -22,6 +29,7 @@
                     id="zip-code"
                     placeholder="Enter your Zip Code"
                     name="zip-code"
+                    <?php if (!empty($_POST)) { ?> value="<?php echo $zipCode; ?>" <?php } ?>
                     required
                   />
                 </div>

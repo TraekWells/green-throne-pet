@@ -16,7 +16,9 @@
               <input
                 type="text"
                 id="zip-code-hero"
+                name="zip-code"
                 placeholder="Enter your Zip Code"
+                required
               />
               <button class="button button__primary">Get a Free Quote</button>
             </div>

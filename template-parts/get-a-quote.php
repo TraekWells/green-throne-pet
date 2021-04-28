@@ -8,12 +8,14 @@
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur
           assumenda minus provident ratione rem officiis!
         </p>
-        <form class="form">
+        <form class="form" action="<?php echo site_url( '/get-a-free-quote' ); ?>" method="post">
           <div class="form-group form-group--inline">
             <input
             type="text"
             id="zip-code-widget"
+            name="zip-code"
             placeholder="Enter your Zip Code"
+            required
             />
             <label for="zip-code-widget">Enter your Zip Code</label>
             <button class="button button__primary">Get a Free Quote</button>
