@@ -44,21 +44,38 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="yard-size">What is the size of your yard?</label>
-                  <select name="yard-size" id="yard-size">
-                    <option value="quarter-acre">1/4 Acre</option>
-                    <option value="half-acre">1/2 Acre</option>
-                    <option value="more-than-half-acre">1/2 Acre+</option>
-                  </select>
+                  <p>What is the size of your yard?</p>
+                  <div class="custom-inputs">
+                    <div class="custom-input">
+                      <input type="radio" name="yard-size" id="quarter-acre" value="quarter-acre">
+                      <label for="quarter-acre">1/4 Acre</label>
+                    </div>
+                    <div class="custom-input">
+                      <input type="radio" name="yard-size" id="half-acre" value="half-acre">
+                      <label for="half-acre">1/2 Acre</label>
+                    </div>
+                    <div class="custom-input">
+                      <input type="radio" name="yard-size" id="more-than-half-acre" value="more-than-half-acre">
+                      <label for="more-than-half-acre">1/2 Acre +</label>
+                    </div>
+                  </div>
                 </div>
                 <div class="form-group">
                   <p>What area needs scooping?</p>
-                  <label for="back-yard">Back Yard</label>
-                  <input type="checkbox" name="back-yard" id="back-yard">
-                  <label for="front-yard">Front Yard</label>
-                  <input type="checkbox" name="front-yard" id="front-yard">
-                  <label for="both">Both</label>
-                  <input type="checkbox" name="both" id="both">
+                  <div class="custom-inputs">
+                    <div class="custom-input">
+                      <input type="radio" name="what-area" id="back-yard" value="back-yard">
+                      <label for="back-yard">Back Yard</label>
+                    </div>
+                    <div class="custom-input">
+                      <input type="radio" name="what-area" id="front-yard" value="front-yard">
+                      <label for="front-yard">Front Yard</label>
+                    </div>
+                    <div class="custom-input">
+                      <input type="radio" name="what-area" id="both" value="both">
+                      <label for="both">Both</label>
+                    </div>
+                  </div>
                 </div>
               </div>
               <section class="form__full-width text-center">
@@ -134,6 +151,7 @@
                     id="address-1"
                     placeholder="Address Line 1"
                     name="address-1"
+                    class="mb-2"
                     required
                   />
                   <input
@@ -150,26 +168,37 @@
                 <p>Placeat occaecati repudiandae veritatis ratione et et aperiam maxime et.</p>
               </div>
               <div class="col">
-                <div class="form-group">
-                  <label for="yard-safe">Is it safe for us to be in the yard with your dog?</label>
-                  <input
-                    type="radio"
-                    id="first-name"
-                    placeholder="Enter your first name"
-                    name="first-name"
-                    required
-                  />
+              <div class="form-group">
+                  <p>Is it safe for us to be in the yard with your dog?</p>
+                  <div class="custom-inputs">
+                    <div class="custom-input">
+                      <input type="radio" name="yard-safe" id="yes" value="yes">
+                      <label for="yes">Yes</label>
+                    </div>
+                    <div class="custom-input">
+                      <input type="radio" name="yard-safe" id="no" value="no">
+                      <label for="no">No</label>
+                    </div>
+                  </div>
                 </div>
                 <div class="form-group">
                   <p>How would you like me to contact you?</p>
-                  <label for="call">Call Me</label>
-                  <input type="checkbox" name="call" id="call">
-                  <label for="text">Text Me</label>
-                  <input type="checkbox" name="text" id="text">
-                  <label for="email">Email Me</label>
-                  <input type="checkbox" name="email" id="email">
+                  <div class="custom-inputs">
+                    <div class="custom-input">
+                      <input type="checkbox" name="call" id="call">
+                      <label for="call">Call Me</label>
+                    </div>
+                    <div class="custom-input">
+                      <input type="checkbox" name="text" id="text">
+                      <label for="text">Text Me</label>
+                    </div>
+                    <div class="custom-input">
+                      <input type="checkbox" name="email" id="email">
+                      <label for="email">Email Me</label>
+                    </div>
+                  </div>
                 </div>
-                <button class="button button__primary">Get Started</button>
+                <button class="button button__primary mt-4">Get Started</button>
               </div>
             </div>
           </form>
