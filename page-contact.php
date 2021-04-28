@@ -13,10 +13,7 @@
       <div class="two-column-grid">
         <div class="col">
           <p class="mb-4">
-            Ratione occaecati placeat qui commodi. Non blanditiis voluptate
-            eos consequatur omnis ducimus consectetur est omnis. Ut quo
-            voluptates. At consequuntur ipsa sunt incidunt. Incidunt quo
-            sapiente ut quidem. Aliquam temporibus non ratione dolorem.
+            <?php the_content(); ?>
           </p>
           <div class="contact-line">
             <svg
