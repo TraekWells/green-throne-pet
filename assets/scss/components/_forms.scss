@@ -4,7 +4,7 @@
   position: relative;
 
   @include media-query(phone) {
-    width: 90%;
+    margin: 0 auto;
   }
 
   label {
@@ -90,15 +90,18 @@
 
   .custom-inputs {
     display: flex;
+    @include media-query(phone) {
+      display: block;
+    }
   }
 
   .custom-input {
     display: flex;
     flex: 1 0 0;
-    background-color: var(--color-gray-300);
 
     label {
       @extend %border-radius;
+      background-color: var(--color-gray-300);
       margin-bottom: 0;
       flex: 1 0 0;
       text-align: center;
@@ -120,6 +123,9 @@
 
     &:not(:last-child) {
       margin-right: 1rem;
+      @include media-query(phone) {
+        margin: 0 0 1rem;
+      }
     }
   }
 

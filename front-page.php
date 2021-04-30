@@ -1,4 +1,14 @@
-    <?php get_header(); ?>
+    <?php get_header();
+      function checkZipCode($zip) {
+        echo $zip;
+        if (in_array($zip, valid_zip_codes, true)) {
+          // echo site_url( '/get-a-free-quote');
+          echo 'valid';
+        } else {
+          echo 'not valid';
+        }
+      }
+    ?>
     
     <main>
       <header class="hero hero--home">
@@ -10,7 +20,7 @@
             to see if we are going to be a fit for you and your furry family
             member.
           </p>
-          <form class="form" action="<?php echo site_url( '/get-a-free-quote' ); ?>" method="post">
+          <form class="form" action="<?php checkZipCode($_POST['zip-code']); ?>" method="post">
             <div class="form-group form-group--inline">
               <label for="zip-code-hero">Enter your Zip Code</label>
               <input
@@ -19,6 +29,8 @@
                 name="zip-code"
                 placeholder="Enter your Zip Code"
                 required
+                pattern="[0-9]{5}"
+                title="5 digit zip code"
               />
               <button class="button button__primary">Get a Free Quote</button>
             </div>

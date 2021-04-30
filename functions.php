@@ -22,3 +22,5 @@ function green_throne_features() {
 }
 
 add_action('after_setup_theme', 'green_throne_features');
+
+define("valid_zip_codes", [80207, 80238, 80010, 80230, 80220]);

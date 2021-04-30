@@ -2,6 +2,10 @@
 
 .price-blocks {
   display: flex;
+
+  @include media-query(phone) {
+    display: block;
+  }
 }
 
 .price-block {
@@ -15,6 +19,10 @@
 
   &:not(:last-child) {
     margin-right: 3rem;
+
+    @include media-query(phone) {
+      margin: 0 0 1rem;
+    }
   }
 
   &__title {
