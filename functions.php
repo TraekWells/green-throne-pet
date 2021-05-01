@@ -23,4 +23,16 @@ function green_throne_features() {
 
 add_action('after_setup_theme', 'green_throne_features');
 
+
+add_action( 'admin_post_nopriv_handle_zip_code', 'check_zip_code');
+
 define("valid_zip_codes", [80207, 80238, 80010, 80230, 80220]);
+
+function check_zip_code() {
+
+  if (in_array($_GET['zip-code'], valid_zip_codes)) {
+    header("Location: " . site_url( '/get-a-free-quote?zip-code=' . $_GET['zip-code'] ));
+  } else {
+    header("Location: " . site_url( '/contact?zip-code=' . $_GET['zip-code'] ));
+  }
+}

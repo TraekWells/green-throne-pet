@@ -1,11 +1,18 @@
 <?php get_header(); ?>
   <header class="hero">
     <div class="container container--narrow">
+      <?php if (isset($_GET['zip-code'])) { ?>
+      <h1>Sorry</h1>
+      <p class="subtitle">
+      Currently, I can’t work outside of the Denver area. Send me a message and maybe we can work something out.
+      </p>
+      <?php } else { ?>
       <h1><?php the_title(); ?></h1>
       <p class="subtitle">
         Can’t find what you’re looking for? Send me a message and I’ll get
         back to you as soon as possible.
       </p>
+      <?php } ?>
     </div>
   </header>
   <section>
