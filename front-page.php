@@ -10,7 +10,7 @@
             to see if we are going to be a fit for you and your furry family
             member.
           </p>
-          <form class="form" action="http://localhost:3000/wp-admin/admin-post.php" method="get">
+          <form class="form" action=" <?php echo site_url(); ?>/wp-admin/admin-post.php" method="get">
             <div class="form-group form-group--inline">
               <label for="zip-code-hero">Enter your Zip Code</label>
               <input
