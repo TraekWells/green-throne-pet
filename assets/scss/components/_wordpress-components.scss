@@ -1,0 +1,52 @@
+@use '../abstracts/mixins' as *;
+
+.wp-block-table {
+  margin: 0 0 4rem;
+
+  &.is-style-stripes {
+    border-bottom: 0;
+  }
+
+  &.centered {
+    margin: 0 auto;
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  tbody {
+    tr {
+      td {
+        background-clip: padding-box;
+        -moz-background-clip: padding-box;
+        -webkit-background-clip: padding-box;
+        &:first-child {
+          border-radius: 1rem;
+        }
+
+        &:last-child {
+          border-radius: 1rem;
+        }
+      }
+    }
+  }
+
+  figcaption {
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--color-gray-700);
+  }
+
+  th,
+  td {
+    padding: 1.5rem 2rem;
+    min-width: 9rem;
+  }
+
+  th {
+    text-align: left;
+    font-weight: normal;
+  }
+}
