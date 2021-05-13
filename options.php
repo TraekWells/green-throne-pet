@@ -59,7 +59,7 @@ class AvailableZipCodes {
 
 		add_settings_field(
 			'zip_codes_0', // id
-			'Zip Codes', // title
+			'Zip Codes <br> (comma seperated list)', // title
 			array( $this, 'zip_codes_0_callback' ), // callback
 			'available-zip-codes-admin', // page
 			'available_zip_codes_setting_section' // section
