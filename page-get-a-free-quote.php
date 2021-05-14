@@ -16,7 +16,6 @@
           <form action="#" class="form" id="form">
             <div class="two-column-grid">
               <div class="col">
-              {{ test }}
                 <h3>Service Information</h3>
                   <p>Placeat occaecati repudiandae veritatis ratione et et aperiam maxime et.</p>
               </div>
@@ -33,37 +32,46 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="how-often">Select how often to clean</label>
-                  <select name="how-often" id="how-often">
-                    <option value="once">One Time Cleanup</option>
-                    <option value="once-per-week">Once Per Week</option>
-                    <option value="twice-per-week">Twice Per Week</option>
+                  <label for="howMany">How many dogs do you have</label>
+                  <select name="howMany" id="howMany" v-model="howManyDogs" @change="updatePricing">
+                    <option value="one" selected>1 Dog</option>
+                    <option value="twoToThree">2-3 Dogs</option>
+                    <option value="fourToFive">4-5 Dogs</option>
                   </select>
                 </div>
                 <div class="form-group">
-                <label for="cleaned-last">When was the last time your yard was cleaned?</label>
-                  <select name="cleaned-last" id="cleaned-last">
-                    <option value="1-2-weeks">1-2 Weeks</option>
-                    <option value="3-4-weeks">3-4 Weeks</option>
-                    <option value="1-2-months">1-2 Months</option>
-                    <option value="3-4-months">3-4 Months</option>
-                    <option value="5-months-or-more">5+ Months</option>
+                <label for="cleanedLast">When was the last time your yard was cleaned?</label>
+                  <select name="cleanedLast" id="cleanedLast" v-model="cleanedLast" @change="updatePricing">
+                    <option value="oneToTwoWeeks" selected>1-2 Weeks</option>
+                    <option value="threeToFourWeeks">3-4 Weeks</option>
+                    <option value="oneToTwoMonths">1-2 Months</option>
+                    <option value="threeToFourMonths">3-4 Months</option>
+                    <option value="fiveOrMoreMonths">5+ Months</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="howOften">Select how often to clean</label>
+                  <select name="howOften" id="howOften" v-model="howOften">
+                    <option value="oneTime" selected>One Time Cleanup</option>
+                    <option value="oncePerWeek">Once Per Week</option>
+                    <option value="twicePerWeek">Twice Per Week</option>
+                    <option value="everyOtherWeek">Every Other Week</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <p>What is the size of your yard?</p>
                   <div class="custom-inputs">
                     <div class="custom-input">
-                      <input type="radio" name="yard-size" id="quarter-acre" value="quarter-acre">
-                      <label for="quarter-acre">1/4 Acre</label>
+                      <input type="radio" name="yardSize" id="quarterAcre" value="quarterAcre">
+                      <label for="quarterAcre">1/4 Acre</label>
                     </div>
                     <div class="custom-input">
-                      <input type="radio" name="yard-size" id="half-acre" value="half-acre">
-                      <label for="half-acre">1/2 Acre</label>
+                      <input type="radio" name="yardSize" id="halfAcre" value="halfAcre">
+                      <label for="halfAcre">1/2 Acre</label>
                     </div>
                     <div class="custom-input">
-                      <input type="radio" name="yard-size" id="more-than-half-acre" value="more-than-half-acre">
-                      <label for="more-than-half-acre">1/2 Acre +</label>
+                      <input type="radio" name="yardSize" id="moreThanHalfAcre" value="moreThanHalfAcre">
+                      <label for="moreThanHalfAcre">1/2 Acre +</label>
                     </div>
                   </div>
                 </div>
@@ -71,15 +79,15 @@
                   <p>What area needs scooping?</p>
                   <div class="custom-inputs">
                     <div class="custom-input">
-                      <input type="radio" name="what-area" id="back-yard" value="back-yard">
-                      <label for="back-yard">Back Yard</label>
+                      <input type="radio" name="whatArea" id="backYard" value="backYard">
+                      <label for="backYard">Back Yard</label>
                     </div>
                     <div class="custom-input">
-                      <input type="radio" name="what-area" id="front-yard" value="front-yard">
-                      <label for="front-yard">Front Yard</label>
+                      <input type="radio" name="whatArea" id="frontYard" value="frontYard">
+                      <label for="frontYard">Front Yard</label>
                     </div>
                     <div class="custom-input">
-                      <input type="radio" name="what-area" id="both" value="both">
+                      <input type="radio" name="whatArea" id="both" value="both">
                       <label for="both">Both</label>
                     </div>
                   </div>
@@ -88,19 +96,24 @@
               <section class="form__full-width text-center">
                 <h2>Estimated Cost</h2>
                 <div class="price-blocks">
-                  <div class="price-block">
+                  <div class="price-block" :class="{ 'selected' : howOften == 'oneTime'}">
                     <h4 class="price-block__title">One-time Cleanup</h4>
-                    <h3 class="price-block__price">$20.00*</h3>
+                    <h3 class="price-block__price">${{ oneTime}}</h3>
                     <p class="price-block__text">*This is just an estimate. I’ll give you the exact quote when I see the yard.</p>
                   </div>
-                  <div class="price-block disabled">
+                  <div class="price-block" :class="{ 'selected' : howOften == 'oncePerWeek'}">
                     <h4 class="price-block__title">Once per week</h4>
-                    <h3 class="price-block__price">$10.00*</h3>
+                    <h3 class="price-block__price">${{ oncePerWeek}}</h3>
                     <p class="price-block__text">*per cleanup</p>
                   </div>
-                  <div class="price-block disabled">
+                  <div class="price-block" :class="{ 'selected' : howOften == 'twicePerWeek'}">
                     <h4 class="price-block__title">Twice per week</h4>
-                    <h3 class="price-block__price">$6.00*</h3>
+                    <h3 class="price-block__price">${{ twicePerWeek}}</h3>
+                    <p class="price-block__text">*per cleanup</p>
+                  </div>
+                  <div class="price-block" :class="{ 'selected' : howOften == 'everyOtherWeek'}">
+                    <h4 class="price-block__title">Every other week</h4>
+                    <h3 class="price-block__price">${{ everyOtherWeek}}</h3>
                     <p class="price-block__text">*per cleanup</p>
                   </div>
                 </div>

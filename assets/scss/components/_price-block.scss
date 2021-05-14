@@ -9,7 +9,7 @@
 }
 
 .price-block {
-  background-color: var(--color-primary-100);
+  background-color: var(--color-gray-300);
   padding: 2.5rem;
   @extend %border-radius;
   text-align: center;
@@ -25,6 +25,12 @@
     }
   }
 
+  .price-block__title,
+  .price-block__price,
+  .price-block__text {
+    color: var(--color-gray-500);
+  }
+
   &__title {
     font-weight: normal;
     margin-bottom: 1rem;
@@ -35,13 +41,15 @@
     margin-bottom: 0;
   }
 
-  &.disabled {
-    background-color: var(--color-gray-300);
-
+  &.selected {
+    background-color: var(--color-primary-100);
     .price-block__title,
-    .price-block__price,
     .price-block__text {
-      color: var(--color-gray-500);
+      color: var(--color-gray-700);
+    }
+
+    .price-block__price {
+      color: var(--color-primary-500);
     }
   }
 }
