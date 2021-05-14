@@ -4,7 +4,7 @@ require_once( __DIR__ . '/options.php');
 function green_throne_files() {
   wp_enqueue_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js', NULL, '1.0', true );
   if (is_page('get-a-free-quote')) {
-    wp_enqueue_script( 'vue', 'https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js', NULL, '1.0', true );
+    wp_enqueue_script( 'vue', 'https://cdn.jsdelivr.net/npm/vue@2', NULL, '1.0', true );
     wp_enqueue_script('green_throne_quote_script', get_template_directory_uri() . '/assets/js/get-a-quote.js', NULL, '1.0', true);
   }
   wp_enqueue_script( 'gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"', NULL, '1.0', true );
