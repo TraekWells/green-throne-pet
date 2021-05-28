@@ -22,3 +22,25 @@
     }
   }
 }
+
+input[type="button"] {
+  @extend %border-radius;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.3rem 2rem;
+  color: var(--color-primary-500);
+  border: none;
+  cursor: pointer;
+  text-align: center;
+  width: 100% !important;
+
+  @extend %transition;
+  background-color: var(--color-primary-100) !important;
+
+  &:hover,
+  &:focus {
+    @include hover;
+    background-color: darken(hsl(134, 44%, 94%), 9%) !important;
+  }
+}

@@ -1,15 +1,22 @@
 @use '../abstracts/mixins' as *;
 
-.form {
+.nf-before-form-content {
+  display: none;
+}
+
+.form,
+.nf-form-cont {
   position: relative;
 
   @include media-query(phone) {
     margin: 0 auto;
   }
 
-  label {
+  label,
+  label[id^="nf-label-field"] {
     font-size: 1.7rem;
     margin-bottom: 1rem;
+    font-weight: normal;
   }
 
   textarea {
@@ -18,7 +25,8 @@
 
   input,
   textarea,
-  select {
+  select,
+  .ninja-forms-field {
     @extend %border-radius;
     background-color: var(--color-gray-300);
     border: none;

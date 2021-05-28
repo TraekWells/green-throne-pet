@@ -17,7 +17,7 @@
             <div class="two-column-grid">
               <div class="col">
                 <h3>Service Information</h3>
-                  <p>Placeat occaecati repudiandae veritatis ratione et et aperiam maxime et.</p>
+                  <p><?php echo get_field('service_information'); ?></p>
               </div>
               <div class="col">
                 <div class="form-group">
@@ -27,6 +27,7 @@
                     id="zip-code"
                     placeholder="Enter your Zip Code"
                     name="zip-code"
+                    onblur=""
                     <?php if (isset($_GET['zip-code'])) { ?> value="<?php echo $_GET['zip-code']; ?>" <?php } ?>
                     required
                   />
@@ -93,35 +94,35 @@
                   </div>
                 </div>
               </div>
-              <section class="form__full-width text-center">
+              <section class="form__full-width text-center pt-0">
                 <h2>Estimated Cost</h2>
                 <div class="price-blocks">
                   <div class="price-block" :class="{ 'selected' : howOften == 'oneTime'}">
                     <h4 class="price-block__title">One-time Cleanup</h4>
                     <h3 class="price-block__price">${{ oneTime}}</h3>
-                    <p class="price-block__text">*This is just an estimate. I’ll give you the exact quote when I see the yard.</p>
                   </div>
                   <div class="price-block" :class="{ 'selected' : howOften == 'oncePerWeek'}">
-                    <h4 class="price-block__title">Once per week</h4>
-                    <h3 class="price-block__price">${{ oncePerWeek}}</h3>
-                    <p class="price-block__text">*per cleanup</p>
+                    <h4 class="price-block__title">Once Per Week</h4>
+                    <h3 class="price-block__price">${{ oncePerWeek}}*</h3>
+                    <p class="price-block__text">per cleanup</p>
                   </div>
                   <div class="price-block" :class="{ 'selected' : howOften == 'twicePerWeek'}">
-                    <h4 class="price-block__title">Twice per week</h4>
-                    <h3 class="price-block__price">${{ twicePerWeek}}</h3>
-                    <p class="price-block__text">*per cleanup</p>
+                    <h4 class="price-block__title">Twice Per Week</h4>
+                    <h3 class="price-block__price">${{ twicePerWeek}}*</h3>
+                    <p class="price-block__text">per cleanup</p>
                   </div>
                   <div class="price-block" :class="{ 'selected' : howOften == 'everyOtherWeek'}">
-                    <h4 class="price-block__title">Every other week</h4>
-                    <h3 class="price-block__price">${{ everyOtherWeek}}</h3>
-                    <p class="price-block__text">*per cleanup</p>
+                    <h4 class="price-block__title">Every Other Week</h4>
+                    <h3 class="price-block__price">${{ everyOtherWeek}}*</h3>
+                    <p class="price-block__text">per cleanup</p>
                   </div>
                 </div>
-                <p>No payment is necessary at this time. Contact us to receive your exact quote! </p>
+                <p class="lead-text mt-3">*Plus a one-time, initial cleanup fee of ${{ initialCleanupFee }}</p>
+                <!-- <p>No payment is necessary at this time. Contact us to receive your exact quote! </p> -->
               </section>
               <div class="col">
                 <h3>Contact Information</h3>
-                <p>Placeat occaecati repudiandae veritatis ratione et et aperiam maxime et.</p>
+                <p><?php echo get_field('contact_information'); ?></p>
               </div>
               <div class="col">
                 <div class="form-group">
@@ -185,7 +186,7 @@
               </div>
               <div class="col">
                 <h3>Pet Information</h3>
-                <p>Placeat occaecati repudiandae veritatis ratione et et aperiam maxime et.</p>
+                <p><?php echo get_field('pet_information'); ?></p>
               </div>
               <div class="col">
               <div class="form-group">

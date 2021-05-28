@@ -4,94 +4,79 @@ const app = new Vue({
     howManyDogs: "one",
     howOften: "oneTime",
     cleanedLast: "oneToTwoWeeks",
-    oneTime: 25,
-    oncePerWeek: 12,
-    twicePerWeek: 9,
-    everyOtherWeek: 25,
+    oneTime: "75",
+    oncePerWeek: "12",
+    twicePerWeek: "9",
+    everyOtherWeek: "25",
+    initialCleanupFee: "25",
     prices: {
       initialFees: {
-        oneToTwoWeeks: 25,
-        threeToFourWeeks: 35,
-        oneToTwoMonths: 40,
-        threeToFourMonths: 45,
-        fiveOrMoreMonths: 50,
+        oneToTwoWeeks: "25",
+        threeToFourWeeks: "35",
+        oneToTwoMonths: "40",
+        threeToFourMonths: "45",
+        fiveOrMoreMonths:
+          "50 - 75 (will give exact amount when we see the yard)",
       },
       numberOfDogs: {
         one: {
-          oneTime: 25,
-          oncePerWeek: 12,
-          twicePerWeek: 9,
-          everyOtherWeek: 25,
+          oncePerWeek: "12",
+          twicePerWeek: "9",
+          everyOtherWeek: "25",
         },
         twoToThree: {
-          oneTime: 40,
-          oncePerWeek: 14,
-          twicePerWeek: 11,
-          everyOtherWeek: 30,
+          oncePerWeek: "14",
+          twicePerWeek: "11",
+          everyOtherWeek: "30",
         },
         fourToFive: {
-          oneTime: 75,
-          oncePerWeek: 16,
-          twicePerWeek: 13,
-          everyOtherWeek: 35,
+          oncePerWeek: "16",
+          twicePerWeek: "13",
+          everyOtherWeek: "35",
         },
       },
     },
   },
   methods: {
     updatePricing() {
-      let initialFees;
-
       if (this.cleanedLast === "oneToTwoWeeks") {
-        initialFees = this.prices.initialFees.oneToTwoWeeks;
+        this.initialCleanupFee = this.prices.initialFees.oneToTwoWeeks;
       }
 
       if (this.cleanedLast === "threeToFourWeeks") {
-        initialFees = this.prices.initialFees.threeToFourWeeks;
+        this.initialCleanupFee = this.prices.initialFees.threeToFourWeeks;
       }
 
       if (this.cleanedLast === "oneToTwoMonths") {
-        initialFees = this.prices.initialFees.oneToTwoMonths;
+        this.initialCleanupFee = this.prices.initialFees.oneToTwoMonths;
       }
 
       if (this.cleanedLast === "threeToFourMonths") {
-        initialFees = this.prices.initialFees.threeToFourWeeks;
+        this.initialCleanupFee = this.prices.initialFees.threeToFourMonths;
       }
 
       if (this.cleanedLast === "fiveOrMoreMonths") {
-        initialFees = this.prices.initialFees.fiveOrMoreMonths;
+        this.initialCleanupFee = this.prices.initialFees.fiveOrMoreMonths;
       }
 
       if (this.howManyDogs === "one") {
-        this.oneTime = this.prices.numberOfDogs.one.oneTime + initialFees;
-        this.oncePerWeek =
-          this.prices.numberOfDogs.one.oncePerWeek + initialFees;
-        this.twicePerWeek =
-          this.prices.numberOfDogs.one.twicePerWeek + initialFees;
-        this.everyOtherWeek =
-          this.prices.numberOfDogs.one.everyOtherWeek + initialFees;
+        this.oncePerWeek = this.prices.numberOfDogs.one.oncePerWeek;
+        this.twicePerWeek = this.prices.numberOfDogs.one.twicePerWeek;
+        this.everyOtherWeek = this.prices.numberOfDogs.one.everyOtherWeek;
       }
 
       if (this.howManyDogs === "twoToThree") {
-        this.oneTime =
-          this.prices.numberOfDogs.twoToThree.oneTime + initialFees;
-        this.oncePerWeek =
-          this.prices.numberOfDogs.twoToThree.oncePerWeek + initialFees;
-        this.twicePerWeek =
-          this.prices.numberOfDogs.twoToThree.twicePerWeek + initialFees;
+        this.oncePerWeek = this.prices.numberOfDogs.twoToThree.oncePerWeek;
+        this.twicePerWeek = this.prices.numberOfDogs.twoToThree.twicePerWeek;
         this.everyOtherWeek =
-          this.prices.numberOfDogs.twoToThree.everyOtherWeek + initialFees;
+          this.prices.numberOfDogs.twoToThree.everyOtherWeek;
       }
 
       if (this.howManyDogs === "fourToFive") {
-        this.oneTime =
-          this.prices.numberOfDogs.fourToFive.oneTime + initialFees;
-        this.oncePerWeek =
-          this.prices.numberOfDogs.fourToFive.oncePerWeek + initialFees;
-        this.twicePerWeek =
-          this.prices.numberOfDogs.fourToFive.twicePerWeek + initialFees;
+        this.oncePerWeek = this.prices.numberOfDogs.fourToFive.oncePerWeek;
+        this.twicePerWeek = this.prices.numberOfDogs.fourToFive.twicePerWeek;
         this.everyOtherWeek =
-          this.prices.numberOfDogs.fourToFive.everyOtherWeek + initialFees;
+          this.prices.numberOfDogs.fourToFive.everyOtherWeek;
       }
     },
   },

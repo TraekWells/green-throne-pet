@@ -33,8 +33,8 @@ add_action( 'admin_post_nopriv_handle_zip_code', 'check_zip_code');
 add_action( 'admin_post_handle_zip_code', 'check_zip_code');
 
 // Zip code variables
-$available_zip_codes_options = get_option( 'available_zip_codes_option_name' ); // Array of All Options
-$zip_code_string = $available_zip_codes_options['zip_codes_0']; // Zip Codes
+$available_zip_codes_options = get_option( 'options_option_name' ); // Array of All Options
+$zip_code_string = $available_zip_codes_options['zip_codes']; // Zip Codes
 $zip_code_array = explode(",", $zip_code_string);
 
 define("valid_zip_codes", $zip_code_array);

@@ -1,4 +1,15 @@
-<?php get_header(); ?>
+<?php
+  require_once( __DIR__ . '/options.php');
+
+  get_header();
+  $options_options = get_option( 'options_option_name' );
+  $phoneNumber = $options_options['phone_number'];
+  $address = $options_options['address'];
+  $email = $options_options['email_address'];
+  $instagram = $options_options['instagram'];
+  $facebook = $options_options['facebook'];
+
+?>
   <header class="hero">
     <div class="container container--narrow">
       <?php if (isset($_GET['zip-code'])) { ?>
@@ -19,9 +30,7 @@
     <div class="container container--narrow">
       <div class="two-column-grid">
         <div class="col">
-          <p class="mb-4">
-            <?php the_content(); ?>
-          </p>
+          <?php the_content(); ?>
           <div class="contact-line">
             <svg
               viewBox="0 0 24 24"
@@ -48,7 +57,7 @@
               </g>
             </svg>
             <div class="contact-line__text">
-              <a href="#">(123) 456-7890</a>
+              <a href="tel:<?php echo trim($phoneNumber); ?>"><?php echo trim($phoneNumber); ?></a>
             </div>
           </div>
           <div class="contact-line">
@@ -74,7 +83,7 @@
               <path fill="none" d="M0 0h24v24H0V0Z" />
             </svg>
             <div class="contact-line__text">
-              <a href="#">bailey.wells@yahoo.com</a>
+              <a href="mailto:<?php echo trim($email); ?>"><?php echo trim($email); ?></a>
             </div>
           </div>
           <div class="contact-line">
@@ -102,12 +111,13 @@
               </g>
             </svg>
             <div class="contact-line__text">
-              <a href="#">123 Denver Lane, CO. 80014</a>
+              <a><?php echo $address; ?></a>
             </div>
           </div>
         </div>
         <div class="col">
-          <form action="#" class="form">
+        <?php echo do_shortcode( '[ninja_form id=2]' ); ?>
+          <!-- <form action="#" class="form">
             <div class="form-group">
               <label for="name">Name</label>
               <input
@@ -149,7 +159,7 @@
               ></textarea>
             </div>
             <button class="button button__primary">Send Message</button>
-          </form>
+          </form> -->
         </div>
       </div>
     </div>

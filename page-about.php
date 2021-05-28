@@ -1,4 +1,12 @@
-<?php get_header(); ?>
+<?php 
+  get_header(); 
+  require_once( __DIR__ . '/options.php');
+  $options_options = get_option( 'options_option_name' );
+  $phoneNumber = $options_options['phone_number'];
+  $email = $options_options['email_address'];
+  $instagram = $options_options['instagram'];
+  $facebook = $options_options['facebook'];
+?>
     <main>
       <header class="hero">
         <div class="container container--narrow">
@@ -16,7 +24,7 @@
                   class="about__image"
                 />
                 <div class="about__socials">
-                  <a href="#" class="about__social-icon">
+                  <a href="tel:<?php echo trim($phoneNumber); ?>" class="about__social-icon">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <g fill="none">
                         <path d="M0 0h24v24H0Z" />
@@ -38,7 +46,7 @@
                       </g>
                     </svg>
                   </a>
-                  <a href="#" class="about__social-icon">
+                  <a href="mailto:<?php echo trim($email); ?>" class="about__social-icon">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <g
                         stroke-linecap="round"
@@ -57,7 +65,7 @@
                       <path fill="none" d="M0 0h24v24H0V0Z" />
                     </svg>
                   </a>
-                  <a href="#" class="about__social-icon">
+                  <a href="https://www.instagram.com/<?php echo trim($instagram); ?>/" class="about__social-icon">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path
                         fill="none"
@@ -95,7 +103,7 @@
                       />
                     </svg>
                   </a>
-                  <a href="#" class="about__social-icon">
+                  <a href="https://www.facebook.com/<?php echo trim($facebook); ?>/" class="about__social-icon">
                     <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <g fill="none">
                         <path d="M0 0h24v24H0Z" />

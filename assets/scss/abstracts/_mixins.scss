@@ -122,6 +122,7 @@
 %card-styles {
   @extend %box-shadow;
   @extend %border-radius;
+  flex-basis: 50%;
   background-color: var(--color-white);
   position: relative;
   padding: 4.5rem 3rem 3rem;

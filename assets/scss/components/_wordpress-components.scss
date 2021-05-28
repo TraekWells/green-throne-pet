@@ -50,3 +50,9 @@
     font-weight: normal;
   }
 }
+
+.wp-block-image {
+  img {
+    height: auto !important;
+  }
+}

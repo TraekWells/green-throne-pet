@@ -3,12 +3,10 @@
     <main>
       <header class="hero hero--home">
         <div class="container container--narrow">
-          <h1>Sick of dealing with dog crap?</h1>
+          <!-- <h1>Sick of dealing with dog crap?</h1> -->
+          <h1><?php the_title(); ?></h1>
           <p class="subtitle mb-4">
-            Well, you’re in luck! Here at Green Throne, we pick up the dog
-            poop, so you don’t have too. Give us a call or check us out online
-            to see if we are going to be a fit for you and your furry family
-            member.
+            <?php echo get_field('subtitle'); ?>
           </p>
           <form class="form" action=" <?php echo site_url(); ?>/wp-admin/admin-post.php" method="get">
             <div class="form-group form-group--inline">
@@ -64,12 +62,9 @@
               </div>
               <h3>One time cleaning</h3>
               <p>
-                Delectus id dolores et rerum rerum consequatur in et. Provident
-                ullam officia qui adipisci sint architecto labore. Neque
-                consequuntur adipisci necessitatibus et. Sint qui dignissimos
-                natus modi corporis.
+                <?php echo get_field('one_time_cleaning_block') ?>
               </p>
-              <a href="#" class="button button__primary">Get a Free Quote</a>
+              <a href="<?php echo site_url( '/get-a-free-quote' ); ?>" class="button button__primary">Get a Free Quote</a>
             </article>
             <article class="card">
               <div class="icon-wrapper">
@@ -125,12 +120,9 @@
               </div>
               <h3>Recurring cleaning</h3>
               <p>
-                Delectus id dolores et rerum rerum consequatur in et. Provident
-                ullam officia qui adipisci sint architecto labore. Neque
-                consequuntur adipisci necessitatibus et. Sint qui dignissimos
-                natus modi corporis.
+                <?php echo get_field('one_time_cleaning_block') ?>
               </p>
-              <a href="#" class="button button__primary">Get a Free Quote</a>
+              <a href="<?php echo site_url( '/get-a-free-quote' ); ?>" class="button button__primary">Get a Free Quote</a>
             </article>
           </section>
           <div class="pill">Added Bonus</div>
