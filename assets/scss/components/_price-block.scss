@@ -6,6 +6,10 @@
   @include media-query(phone) {
     display: block;
   }
+
+  @include media-query(phone-large) {
+    flex-wrap: wrap;
+  }
 }
 
 .price-block {

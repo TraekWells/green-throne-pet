@@ -32,4 +32,33 @@
   };
 
   hamburger.addEventListener("click", handleMenu);
+
+  const zipInput = document.getElementById("zip-code");
+
+  if (zipInput) {
+    zipInput.addEventListener("blur", function () {
+      const data = new URLSearchParams();
+      data.append("_ajax_nonce", "nonce");
+      data.append("action", "check_zip_code");
+      data.append("zip-code", document.getElementById("zip-code").value);
+      fetch(green_throne_globals.ajaxurl, {
+        method: "POST",
+        credentials: "same-origin",
+        headers: new Headers({
+          "Content-Type": "application/x-www-form-urlencoded",
+        }),
+        body: data,
+      })
+        .then(function (response) {
+          if (response.url.includes("contact")) {
+            window.location = response.url;
+          }
+          return response.text();
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      return false;
+    });
+  }
 })();

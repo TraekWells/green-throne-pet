@@ -8,7 +8,7 @@
           <p class="subtitle mb-4">
             <?php echo get_field('subtitle'); ?>
           </p>
-          <form class="form" action=" <?php echo site_url(); ?>/wp-admin/admin-post.php" method="get">
+          <form class="form" action=" <?php echo site_url(); ?>/wp-admin/admin-post.php" method="post">
             <div class="form-group form-group--inline">
               <label for="zip-code-hero">Enter your Zip Code</label>
               <input

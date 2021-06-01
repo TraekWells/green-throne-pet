@@ -13,7 +13,7 @@
       </header>
       <section>
         <div class="container container--narrow">
-          <form action="#" class="form" id="form">
+          <form action="#" class="form" id="form" method="post">
             <div class="two-column-grid">
               <div class="col">
                 <h3>Service Information</h3>
@@ -27,7 +27,6 @@
                     id="zip-code"
                     placeholder="Enter your Zip Code"
                     name="zip-code"
-                    onblur=""
                     <?php if (isset($_GET['zip-code'])) { ?> value="<?php echo $_GET['zip-code']; ?>" <?php } ?>
                     required
                   />
@@ -118,7 +117,6 @@
                   </div>
                 </div>
                 <p class="lead-text mt-3">*Plus a one-time, initial cleanup fee of ${{ initialCleanupFee }}</p>
-                <!-- <p>No payment is necessary at this time. Contact us to receive your exact quote! </p> -->
               </section>
               <div class="col">
                 <h3>Contact Information</h3>
