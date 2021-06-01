@@ -13,7 +13,7 @@
       </header>
       <section>
         <div class="container container--narrow">
-          <form action="#" class="form" id="form" method="post">
+          <form action="quote-form.php" class="form" id="form" method="post">
             <div class="two-column-grid">
               <div class="col">
                 <h3>Service Information</h3>
@@ -26,7 +26,9 @@
                     type="text"
                     id="zip-code"
                     placeholder="Enter your Zip Code"
-                    name="zip-code"
+                    name="zipCode"
+                    pattern="[0-9]{5}"
+                    title="5 digit zip code"
                     <?php if (isset($_GET['zip-code'])) { ?> value="<?php echo $_GET['zip-code']; ?>" <?php } ?>
                     required
                   />
@@ -129,7 +131,7 @@
                     type="text"
                     id="first-name"
                     placeholder="Enter your first name"
-                    name="first-name"
+                    name="firstName"
                     required
                   />
                 </div>
@@ -139,7 +141,7 @@
                     type="text"
                     id="last-name"
                     placeholder="Enter your last name"
-                    name="last-name"
+                    name="lastName"
                     required
                   />
                 </div>
@@ -149,7 +151,7 @@
                     type="text"
                     id="email-address"
                     placeholder="Enter your email address"
-                    name="email-address"
+                    name="emailAddress"
                     required
                   />
                 </div>
@@ -159,7 +161,7 @@
                     type="tel"
                     id="phone-number"
                     placeholder="Enter your phone number"
-                    name="phone-number"
+                    name="phoneNumber"
                     required
                   />
                 </div>
@@ -169,7 +171,7 @@
                     type="text"
                     id="address-1"
                     placeholder="Address Line 1"
-                    name="address-1"
+                    name="address1"
                     class="mb-2"
                     required
                   />
@@ -177,7 +179,7 @@
                     type="text"
                     id="address-2"
                     placeholder="Address Line 2"
-                    name="address-2"
+                    name="address2"
                     required
                   />
                 </div>
@@ -191,11 +193,11 @@
                   <p>Is it safe for us to be in the yard with your dog?</p>
                   <div class="custom-inputs">
                     <div class="custom-input">
-                      <input type="radio" name="yard-safe" id="yes" value="yes">
+                      <input type="radio" name="yardSafe" id="yes" value="yes">
                       <label for="yes">Yes</label>
                     </div>
                     <div class="custom-input">
-                      <input type="radio" name="yard-safe" id="no" value="no">
+                      <input type="radio" name="yardSafe" id="no" value="no">
                       <label for="no">No</label>
                     </div>
                   </div>
@@ -204,15 +206,15 @@
                   <p>How would you like me to contact you?</p>
                   <div class="custom-inputs">
                     <div class="custom-input">
-                      <input type="checkbox" name="call" id="call">
+                      <input type="checkbox" name="contactMethod" value="call" id="call">
                       <label for="call">Call Me</label>
                     </div>
                     <div class="custom-input">
-                      <input type="checkbox" name="text" id="text">
+                      <input type="checkbox" name="contactMethod" value="text" id="text">
                       <label for="text">Text Me</label>
                     </div>
                     <div class="custom-input">
-                      <input type="checkbox" name="email" id="email">
+                      <input type="checkbox" name="contactMethod" value="email" id="email">
                       <label for="email">Email Me</label>
                     </div>
                   </div>
