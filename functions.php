@@ -36,6 +36,9 @@ add_action('after_setup_theme', 'green_throne_features');
 add_action( 'admin_post_nopriv_handle_zip_code', 'check_zip_code');
 add_action( 'admin_post_handle_zip_code', 'check_zip_code');
 
+add_action( 'admin_post_nopriv_send_quote_form', 'send_quote_form');
+add_action( 'admin_post_send_quote_form', 'send_quote_form');
+
 add_action( 'wp_ajax_nopriv_check_zip_code', 'check_zip_code');
 add_action( 'wp_ajax_check_zip_code', 'check_zip_code');
 
@@ -54,4 +57,68 @@ function check_zip_code() {
     exit( wp_safe_redirect( site_url( '/contact?zip-code=' . $_POST['zip-code'] )));
   }
   wp_die();
+}
+
+function send_quote_form() {
+  if ( ! empty( $_POST ) ) {
+    // Get all of the form fields
+    $zipCode = sanitize_text_field($_POST['zipCode']);
+    $numberOfDogs = $_POST['howMany'];
+    $cleanedLast = $_POST['cleanedLast'];
+    $howOften = $_POST['howOften'];
+    $yardSize = $_POST['yardSize'];
+    $whatArea = $_POST['whatArea'];
+    
+    $firstName = sanitize_text_field($_POST['firstName']);
+    $lastName = sanitize_text_field($_POST['lastName']);
+    $email = sanitize_email($_POST['emailAddress']);
+    $phoneNumber = sanitize_text_field($_POST['phoneNumber']);
+    $address1 = sanitize_text_field($_POST['address1']);
+    $address2 = sanitize_text_field($_POST['address2']);
+    
+    $yardSafe = $_POST['yardSafe'];
+    $contactMethod = $_POST['contactMethod'];
+  
+    $to = get_option('admin_email');
+    $subject = "New Quote Form Submission";
+    $message = $firstName . " has just submitted a quote request."
+              . "\r\n\r\n"
+              . "\r\n\r\n"
+              . "<h3>Service Information</h3>"
+              . "\r\n\r\n"
+              . "Zip Code: " . $zipCode
+              . "\r\n\r\n"
+              . "Number of Dogs: " . $numberOfDogs
+              . "\r\n\r\n"
+              . "When was the yard last cleaned? " . $cleanedLast
+              . "\r\n\r\n"
+              . "How often do you want the yard cleaned? " . $howOften
+              . "\r\n\r\n"
+              . "Size of the yard: " . $yardSize
+              . "\r\n\r\n"
+              . "What area do you want cleaned? " . $whatArea
+              . "\r\n\r\n"
+              . "<h3>Contact Information</h3>"
+              . "\r\n\r\n"
+              . "Name " . $firstName . " " . $lastName
+              . "\r\n\r\n"
+              . "Email Address: " . $email
+              . "\r\n\r\n"
+              . "Phone Number: " . $phoneNumber
+              . "\r\n\r\n"
+              . "Address: " . $address1 . $address2
+              . "\r\n\r\n"
+              . "<h3>Pet Information</h3>"
+              . "\r\n\r\n"
+              . "Can you be in the yard with the dogs? " . $yardSafe
+              . "\r\n\r\n"
+              . "Preferred Contact Method: " . $contactMethod;
+      $headers[] = "From:" . $email;
+      $headers[] = "Content-Type: text/html; charset=UTF-8";
+  
+    wp_mail( $to, $subject, $message, $headers);
+  
+    wp_safe_redirect( site_url('/thank-you') );
+    exit;
+  }
 }

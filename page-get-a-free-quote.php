@@ -13,7 +13,7 @@
       </header>
       <section>
         <div class="container container--narrow">
-          <form action="quote-form.php" class="form" id="form" method="post">
+          <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" class="form" id="form" name="quote-form" method="post">
             <div class="two-column-grid">
               <div class="col">
                 <h3>Service Information</h3>
@@ -64,7 +64,7 @@
                   <p>What is the size of your yard?</p>
                   <div class="custom-inputs">
                     <div class="custom-input">
-                      <input type="radio" name="yardSize" id="quarterAcre" value="quarterAcre">
+                      <input type="radio" name="yardSize" id="quarterAcre" value="quarterAcre" required>
                       <label for="quarterAcre">1/4 Acre</label>
                     </div>
                     <div class="custom-input">
@@ -81,7 +81,7 @@
                   <p>What area needs scooping?</p>
                   <div class="custom-inputs">
                     <div class="custom-input">
-                      <input type="radio" name="whatArea" id="backYard" value="backYard">
+                      <input type="radio" name="whatArea" id="backYard" value="backYard" required>
                       <label for="backYard">Back Yard</label>
                     </div>
                     <div class="custom-input">
@@ -180,7 +180,6 @@
                     id="address-2"
                     placeholder="Address Line 2"
                     name="address2"
-                    required
                   />
                 </div>
               </div>
@@ -193,7 +192,7 @@
                   <p>Is it safe for us to be in the yard with your dog?</p>
                   <div class="custom-inputs">
                     <div class="custom-input">
-                      <input type="radio" name="yardSafe" id="yes" value="yes">
+                      <input type="radio" name="yardSafe" id="yes" value="yes" required>
                       <label for="yes">Yes</label>
                     </div>
                     <div class="custom-input">
@@ -206,7 +205,7 @@
                   <p>How would you like me to contact you?</p>
                   <div class="custom-inputs">
                     <div class="custom-input">
-                      <input type="checkbox" name="contactMethod" value="call" id="call">
+                      <input type="checkbox" name="contactMethod" value="call" id="call" required>
                       <label for="call">Call Me</label>
                     </div>
                     <div class="custom-input">
@@ -219,9 +218,10 @@
                     </div>
                   </div>
                 </div>
-                <button class="button button__primary mt-4">Get Started</button>
+                <button class="button button__primary mt-4" name="submit">Get Started</button>
               </div>
             </div>
+            <input type="hidden" name="action" value="send_quote_form">
           </form>
         </div>
       </section>
