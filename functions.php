@@ -81,38 +81,38 @@ function send_quote_form() {
   
     $to = get_option('admin_email');
     $subject = "New Quote Form Submission";
-    $message = $firstName . " has just submitted a quote request."
+    $message = $firstName . " " . $lastName . " has just submitted a quote request."
               . "\r\n\r\n"
               . "\r\n\r\n"
               . "<h3>Service Information</h3>"
               . "\r\n\r\n"
-              . "Zip Code: " . $zipCode
+              . "<strong>Zip Code:</strong> " . $zipCode . "<br>"
               . "\r\n\r\n"
-              . "Number of Dogs: " . $numberOfDogs
+              . "<strong>Number of Dogs:</strong> " . $numberOfDogs . "<br>"
               . "\r\n\r\n"
-              . "When was the yard last cleaned? " . $cleanedLast
+              . "<strong>When was the yard last cleaned?</strong> " . $cleanedLast . "<br>"
               . "\r\n\r\n"
-              . "How often do you want the yard cleaned? " . $howOften
+              . "<strong>How often do you want the yard cleaned?</strong> " . $howOften . "<br>"
               . "\r\n\r\n"
-              . "Size of the yard: " . $yardSize
+              . "<strong>Size of the yard:</strong> " . $yardSize . "<br>"
               . "\r\n\r\n"
-              . "What area do you want cleaned? " . $whatArea
+              . "<strong>What area do you want cleaned?</strong> " . $whatArea . "<br>"
               . "\r\n\r\n"
               . "<h3>Contact Information</h3>"
               . "\r\n\r\n"
-              . "Name " . $firstName . " " . $lastName
+              . "<strong>Name</strong> " . $firstName . " " . $lastName . "<br>"
               . "\r\n\r\n"
-              . "Email Address: " . $email
+              . "<strong>Email Address:</strong> " . $email . "<br>"
               . "\r\n\r\n"
-              . "Phone Number: " . $phoneNumber
+              . "<strong>Phone Number:</strong> " . $phoneNumber . "<br>"
               . "\r\n\r\n"
-              . "Address: " . $address1 . $address2
+              . "<strong>Address:</strong> " . $address1 . $address2 . "<br>"
               . "\r\n\r\n"
               . "<h3>Pet Information</h3>"
               . "\r\n\r\n"
-              . "Can you be in the yard with the dogs? " . $yardSafe
+              . "<strong>Can you be in the yard with the dogs?</strong> " . $yardSafe . "<br>"
               . "\r\n\r\n"
-              . "Preferred Contact Method: " . $contactMethod;
+              . "<strong>Preferred Contact Method:</strong> " . $contactMethod . "<br>";
       $headers[] = "From:" . $email;
       $headers[] = "Content-Type: text/html; charset=UTF-8";
   
