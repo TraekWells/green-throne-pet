@@ -1,5 +1,10 @@
 @use '../abstracts/mixins' as *;
 
+.form-instructions {
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
 .nf-before-form-content {
   display: none;
 }

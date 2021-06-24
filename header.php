@@ -12,7 +12,7 @@
         <a href="<?php echo site_url(); ?>">
           <img
             class="logo"
-            src="<?php echo get_template_directory_uri(); ?>/assets/images/green-throne-pet-logo.png"
+            src="<?php echo get_template_directory_uri(); ?>/assets/images/green-throne-logo.png"
             alt="Green Throne Pet Logo"
           />
         </a>

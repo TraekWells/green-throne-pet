@@ -20,8 +20,9 @@
                   <p><?php echo get_field('service_information'); ?></p>
               </div>
               <div class="col">
+                <p class="form-instructions"><span class="required">*</span> Indicates a required field</p>
                 <div class="form-group">
-                  <label for="name">Zip Code</label>
+                  <label for="name">Zip Code <span class="required">*</span></label>
                   <input
                     type="text"
                     id="zip-code"
@@ -34,16 +35,16 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="howMany">How many dogs do you have</label>
-                  <select name="howMany" id="howMany" v-model="howManyDogs" @change="updatePricing">
+                  <label for="howMany">How many dogs do you have <span class="required">*</span></label>
+                  <select name="howMany" id="howMany" v-model="howManyDogs" @change="updatePricing" required>
                     <option value="one" selected>1 Dog</option>
                     <option value="twoToThree">2-3 Dogs</option>
                     <option value="fourToFive">4-5 Dogs</option>
                   </select>
                 </div>
                 <div class="form-group">
-                <label for="cleanedLast">When was the last time your yard was cleaned?</label>
-                  <select name="cleanedLast" id="cleanedLast" v-model="cleanedLast" @change="updatePricing">
+                <label for="cleanedLast">When was the last time your yard was cleaned? <span class="required">*</span></label>
+                  <select name="cleanedLast" id="cleanedLast" v-model="cleanedLast" @change="updatePricing" required>
                     <option value="oneToTwoWeeks" selected>1-2 Weeks</option>
                     <option value="threeToFourWeeks">3-4 Weeks</option>
                     <option value="oneToTwoMonths">1-2 Months</option>
@@ -52,47 +53,13 @@
                   </select>
                 </div>
                 <div class="form-group">
-                  <label for="howOften">Select how often to clean</label>
-                  <select name="howOften" id="howOften" v-model="howOften">
+                  <label for="howOften">Select how often to clean <span class="required">*</span></label>
+                  <select name="howOften" id="howOften" v-model="howOften" required>
                     <option value="oneTime" selected>One Time Cleanup</option>
                     <option value="oncePerWeek">Once Per Week</option>
                     <option value="twicePerWeek">Twice Per Week</option>
                     <option value="everyOtherWeek">Every Other Week</option>
                   </select>
-                </div>
-                <div class="form-group">
-                  <p>What is the size of your yard?</p>
-                  <div class="custom-inputs">
-                    <div class="custom-input">
-                      <input type="radio" name="yardSize" id="quarterAcre" value="quarterAcre" required>
-                      <label for="quarterAcre">1/4 Acre</label>
-                    </div>
-                    <div class="custom-input">
-                      <input type="radio" name="yardSize" id="halfAcre" value="halfAcre">
-                      <label for="halfAcre">1/2 Acre</label>
-                    </div>
-                    <div class="custom-input">
-                      <input type="radio" name="yardSize" id="moreThanHalfAcre" value="moreThanHalfAcre">
-                      <label for="moreThanHalfAcre">1/2 Acre +</label>
-                    </div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <p>What area needs scooping?</p>
-                  <div class="custom-inputs">
-                    <div class="custom-input">
-                      <input type="radio" name="whatArea" id="backYard" value="backYard" required>
-                      <label for="backYard">Back Yard</label>
-                    </div>
-                    <div class="custom-input">
-                      <input type="radio" name="whatArea" id="frontYard" value="frontYard">
-                      <label for="frontYard">Front Yard</label>
-                    </div>
-                    <div class="custom-input">
-                      <input type="radio" name="whatArea" id="both" value="both">
-                      <label for="both">Both</label>
-                    </div>
-                  </div>
                 </div>
               </div>
               <section class="form__full-width text-center pt-0">
@@ -126,7 +93,7 @@
               </div>
               <div class="col">
                 <div class="form-group">
-                  <label for="first-name">First Name</label>
+                  <label for="first-name">First Name <span class="required">*</span></label>
                   <input
                     type="text"
                     id="first-name"
@@ -136,7 +103,7 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="last-name">Last Name</label>
+                  <label for="last-name">Last Name <span class="required">*</span></label>
                   <input
                     type="text"
                     id="last-name"
@@ -146,9 +113,9 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="email-address">Email Address</label>
+                  <label for="email-address">Email Address <span class="required">*</span></label>
                   <input
-                    type="text"
+                    type="email"
                     id="email-address"
                     placeholder="Enter your email address"
                     name="emailAddress"
@@ -156,7 +123,7 @@
                   />
                 </div>
                 <div class="form-group">
-                  <label for="phone-number">Phone Number</label>
+                  <label for="phone-number">Phone Number <span class="required">*</span></label>
                   <input
                     type="tel"
                     id="phone-number"
@@ -189,7 +156,7 @@
               </div>
               <div class="col">
               <div class="form-group">
-                  <p>Is it safe for us to be in the yard with your dog?</p>
+                  <p>Is it safe for us to be in the yard with your dog? <span class="required">*</span></p>
                   <div class="custom-inputs">
                     <div class="custom-input">
                       <input type="radio" name="yardSafe" id="yes" value="yes" required>

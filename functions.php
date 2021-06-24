@@ -66,8 +66,6 @@ function send_quote_form() {
     $numberOfDogs = $_POST['howMany'];
     $cleanedLast = $_POST['cleanedLast'];
     $howOften = $_POST['howOften'];
-    $yardSize = $_POST['yardSize'];
-    $whatArea = $_POST['whatArea'];
     
     $firstName = sanitize_text_field($_POST['firstName']);
     $lastName = sanitize_text_field($_POST['lastName']);
@@ -93,10 +91,6 @@ function send_quote_form() {
               . "<strong>When was the yard last cleaned?</strong> " . $cleanedLast . "<br>"
               . "\r\n\r\n"
               . "<strong>How often do you want the yard cleaned?</strong> " . $howOften . "<br>"
-              . "\r\n\r\n"
-              . "<strong>Size of the yard:</strong> " . $yardSize . "<br>"
-              . "\r\n\r\n"
-              . "<strong>What area do you want cleaned?</strong> " . $whatArea . "<br>"
               . "\r\n\r\n"
               . "<h3>Contact Information</h3>"
               . "\r\n\r\n"
