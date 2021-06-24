@@ -19,7 +19,7 @@
             <div class="col">
               <div class="about">
                 <img
-                  src="https://picsum.photos/300/300"
+                  src="<?php echo get_the_post_thumbnail_url(); ?>"
                   alt=""
                   class="about__image"
                 />

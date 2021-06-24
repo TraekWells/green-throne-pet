@@ -13,6 +13,7 @@
         <a href="<?php echo site_url( '/contact' ); ?>" class="footer__link">Contact</a>
         <a href="<?php echo site_url( '/faq' ); ?>" class="footer__link">FAQ</a>
         <a href="<?php echo site_url( '/about' ); ?>" class="footer__link">About</a>
+        <a href="<?php echo site_url( '/policy' ); ?>" class="footer__link">Policy</a>
       </div>
       <div class="footer__socials">
         <a href="tel:<?php echo trim($phoneNumber); ?>" class="footer__social-icon">
