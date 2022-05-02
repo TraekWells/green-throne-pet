@@ -25,7 +25,7 @@ function watch() {
     ghostMode: false,
   });
   gulp.watch("./assets/scss/**/*.scss", scss);
-  gulp.watch("./*.php").on("change", browserSync.reload);
+  gulp.watch("./**/*.php").on("change", browserSync.reload);
   gulp.watch("./template-parts/*.php").on("change", browserSync.reload);
   gulp.watch("./assets/js/**.js").on("change", browserSync.reload);
 }

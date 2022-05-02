@@ -3,6 +3,11 @@
       <header class="hero">
         <div class="container container--narrow">
         <h1><?php the_title(); ?></h1>
+        <?php if (get_field('subtitle')) { ?>
+          <p class="subtitle">
+            <?php echo get_field('subtitle'); ?>
+          </p>
+        <?php }; ?>
         </div>
       </header>
       <section>

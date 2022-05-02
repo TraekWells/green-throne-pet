@@ -28,7 +28,7 @@
       </header>
       <section>
         <div class="container">
-          <h2>Residential Services</h2>
+          <h2 class="text-center">Residential Services</h2>
           <p class="lead-text">
             We we provide the following services in the Denver and Aurora area!
           </p>
@@ -133,7 +133,7 @@
       </section>
       <section>
         <div class="container container--wide">
-        <h2>How It Works</h2>
+        <h2 class="text-center">How It Works</h2>
         <p class="lead-text">
           Getting you yard cleaned up and back to normal is as four steps (two
           steps for you, two steps for me)
@@ -174,7 +174,7 @@
       </section>
       <section>
         <div class="container">
-        <h2>Why Choose Green Throne?</h2>
+        <h2 class="text-center">Why Choose Green Throne?</h2>
         <p class="lead-text">
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim
           suscipit fugiat inventore eos sed debitis.
